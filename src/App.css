@@ -1,3 +1,5 @@
+/* Style du header  */
+
 header {
   display: flex;
   align-items: center;
@@ -17,4 +19,23 @@ header ul li:nth-child(3) {
 
 .logo-marvel {
   width: 200px;
+}
+
+/* Style de la page Characters  */
+
+.characters-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: aqua;
+}
+
+.characters {
+  border: red 1px solid;
+  width: 250px;
+  height: 450px;
+  margin-bottom: 50px;
+}
+
+.characters-name {
+  margin-bottom: 30px;
 }
