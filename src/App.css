@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  background-color: gray;
+}
+
+header ul {
+  display: flex;
+}
+
+header ul li:nth-child(2),
+header ul li:nth-child(3) {
+  padding-left: 10px;
+}
+
+.logo-marvel {
+  width: 200px;
+}
