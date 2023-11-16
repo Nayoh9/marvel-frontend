@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const Characters = () => {
+const Characters = ({ favorites, setFavorites }) => {
   const [isLoading, setIsloading] = useState(true);
   const [data, setData] = useState();
 
@@ -24,61 +25,77 @@ const Characters = () => {
       setIsloading(false);
     };
     fetchData();
-  }, [skip, searchCharacter]);
-  console.log(data);
-
-  // Créer un query skip qui permet de passer les résulats et le récuperer coter back
+  }, [skip, searchCharacter, limit]);
+  // console.log(data);
 
   return isLoading ? (
-    <p>loading page ...</p>
+    <p className="loading">loading page ...</p>
   ) : (
-    <section>
-      <input
-        type="text"
-        onChange={(e) => {
-          setSearchCharacter(e.target.value);
-        }}
-      />
+    <section className="characters">
+      <div className="input">
+        <input
+          type="text"
+          onChange={(e) => {
+            setSearchCharacter(e.target.value);
+          }}
+        />
+      </div>
       <div className="characters-container">
         {data.results.map((character) => {
-          // console.log(character.comics);
+          // console.log(character);
 
           return (
-            <Link to={`/character/${character.comics}}`} key={character._id}>
-              <article className="characters">
-                <img
-                  src={`${character.thumbnail.path}/portrait_xlarge.jpg`}
-                  alt={`super héros ${character.name}`}
-                />
-                <p className="characters-name">Nom : {character.name}</p>
-                <p>Description : {character.description}</p>
-              </article>
-            </Link>
+            <article key={character._id}>
+              <Link to={`/character/${character.comics}}`}>
+                <div>
+                  <img
+                    src={`${character.thumbnail.path}/portrait_xlarge.jpg`}
+                    alt={`super héros ${character.name}`}
+                  />
+                  <p className="characters-name">Nom : {character.name}</p>
+                  <p>Description : {character.description}</p>
+                </div>
+              </Link>
+              <div className="favorites">
+                <button
+                  onClick={() => {
+                    const favoritesCopy = [...favorites];
+                    favoritesCopy.push(character);
+                    setFavorites(favoritesCopy);
+                    console.log(favorites);
+                  }}
+                >
+                  Ajouter ce héros à vos favoris !
+                </button>
+              </div>
+            </article>
           );
         })}
-        <div>
-          <button
-            onClick={() => {
-              setSkip(skip - limit);
-            }}
-            style={{ display: skip > 0 ? "inline" : "none" }}
-          >
-            Page précédente
-          </button>
+      </div>
+      <div>
+        <button
+          onClick={() => {
+            setSkip(skip - limit);
+          }}
+          style={{ display: skip > 0 ? "inline" : "none" }}
+        >
+          Page précédente
+        </button>
 
-          <button
-            onClick={() => {
-              setSkip(skip + limit);
-              console.log(skip);
-            }}
-            style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
-          >
-            Page suivante
-          </button>
-        </div>
+        <button
+          onClick={() => {
+            setSkip(skip + limit);
+            console.log(skip);
+          }}
+          style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
+        >
+          Page suivante
+        </button>
       </div>
     </section>
   );
 };
 
 export default Characters;
+
+// Créer une check box sur chacune des div, si elle est cochée on push toutes les informations du personnage dans un tableau

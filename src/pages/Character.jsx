@@ -14,7 +14,6 @@ const Character = () => {
   const tab = id.split(",");
   console.log(tab);
 
-  // REPRENDRE DEMAIN RECUPERER LE TABLEAU DANS DATA POUR EN FAIRE UN MAP ET AFFICHER LES COMICS
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
@@ -31,11 +30,11 @@ const Character = () => {
   console.log(data);
 
   return isLoading ? (
-    <p>Loading page ...</p>
+    <p className="loading">Loading page ...</p>
   ) : (
     <section className="comics-id">
       {data.map((comic) => {
-        console.log(comic);
+        // console.log(comic);
         return (
           <article key={comic._id}>
             <img
@@ -50,8 +49,3 @@ const Character = () => {
 };
 
 export default Character;
-
-// Faire une boucle
-// et pour chaque index du tableau faire une requete avec pour params l'index du moment
-
-// Envoyer les query à mon back, mon back les entre en query de la demande qu'il fait à l'API et me retourne ce que l'API lui retourne

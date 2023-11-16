@@ -1,7 +1,8 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 
-const Comics = () => {
+const Comics = ({ favorites, setFavorites }) => {
   const [data, setData] = useState();
   const [isLoading, setIsloading] = useState(true);
 
@@ -26,7 +27,7 @@ const Comics = () => {
   console.log(data);
 
   return isLoading ? (
-    <p>Loading page ...</p>
+    <p className="loading">Loading page ...</p>
   ) : (
     <section>
       <input
@@ -39,16 +40,28 @@ const Comics = () => {
         {data.results.map((comic) => {
           // console.log(comic);
           return (
-            <article key={comic._id} className="comics">
-              <img
-                src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
-                alt={`image de la BD dont le titre est ${comic.title}`}
-              />
-              <p>{comic.title}</p>
-              <p>{comic.description}</p>
+            <article key={comic._id}>
+              <div className="comics">
+                <img
+                  src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
+                  alt={`image de la BD dont le titre est ${comic.title}`}
+                />
+                <p>{comic.title}</p>
+                <p>{comic.description}</p>
+              </div>
+              <button
+                onClick={() => {
+                  const favoritesCopy = [...favorites];
+                  favoritesCopy.push(comic);
+                  setFavorites(favoritesCopy);
+                }}
+              >
+                Ajouter ce comic à vos favoris
+              </button>
             </article>
           );
         })}
+
         <div>
           <button
             onClick={() => {
