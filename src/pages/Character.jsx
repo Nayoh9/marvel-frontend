@@ -8,6 +8,7 @@ const Character = () => {
   const id = params.comics;
 
   const [data, setData] = useState();
+  const [isLoading, setIsloading] = useState(true);
 
   // Je transforme le tout de chaine de caractère à tableau
   const tab = id.split(",");
@@ -20,6 +21,7 @@ const Character = () => {
         `http://localhost:3000/comics/comics/${tab}`
       );
       setData(response.data);
+      setIsloading(false);
     };
 
     fetchData();
@@ -28,7 +30,23 @@ const Character = () => {
   }, []);
   console.log(data);
 
-  return <div></div>;
+  return isLoading ? (
+    <p>Loading page ...</p>
+  ) : (
+    <section className="comics-id">
+      {data.map((comic) => {
+        console.log(comic);
+        return (
+          <article key={comic._id}>
+            <img
+              src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
+              alt="Une BD avec des super héros en couverture"
+            />
+          </article>
+        );
+      })}
+    </section>
+  );
 };
 
 export default Character;

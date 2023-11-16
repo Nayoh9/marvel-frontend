@@ -12,16 +12,11 @@ header ul {
   display: flex;
 }
 
-header ul li:nth-child(2),
-header ul li:nth-child(3) {
-  padding-left: 10px;
-}
-
 .logo-marvel {
   width: 200px;
 }
 
-/* Style de la page Characters  */
+/* Style de la page CharacterS  */
 
 .characters-container {
   display: flex;
@@ -38,4 +33,26 @@ header ul li:nth-child(3) {
 
 .characters-name {
   margin-bottom: 30px;
+}
+
+/* Style de la page Character */
+
+.comics-id {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style de la page Comics */
+
+.comics-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comics {
+  border: red 1px solid;
+  width: 250px;
+  height: 450px;
+  margin-bottom: 50px;
+  overflow: hidden;
 }
