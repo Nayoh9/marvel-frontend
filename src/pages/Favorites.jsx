@@ -1,15 +1,13 @@
 import Cookies from "js-cookie";
-import { useState } from "react";
+import { useEffect } from "react";
 
 const Favorites = ({ favorites, setFavorites }) => {
   console.log(favorites);
-  const [cookie, setCookie] = useState(false);
 
   return (
     <section>
       {favorites.map((character) => {
-        console.log(character);
-
+        // console.log(character);
         return (
           <article key={character._id}>
             <img
@@ -21,9 +19,16 @@ const Favorites = ({ favorites, setFavorites }) => {
             <div>
               <button
                 onClick={() => {
-                  const favoritesCopy = [...favorites];
-                  favoritesCopy.pop(character);
-                  setFavorites(favoritesCopy);
+                  for (let i = 0; i < favorites.length; i++) {
+                    if (character.name === favorites[i].name) {
+                      console.log("trouvé =>", character.name);
+                      const newTab = [...favorites];
+                      console.log(favorites[i]);
+                      console.log(i);
+                      newTab.splice(i, 1);
+                      setFavorites(newTab);
+                    }
+                  }
                 }}
               >
                 Retirer des favoris
@@ -37,5 +42,3 @@ const Favorites = ({ favorites, setFavorites }) => {
 };
 
 export default Favorites;
-
-// Si State cookies =

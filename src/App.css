@@ -1,13 +1,13 @@
-/* Font  */
-
-@import url("https://fonts.googleapis.com/css2?family=Marvel&display=swap");
-
 .loading {
   height: 100vh;
   background-color: var(--main-bcg-color);
   color: var(--main-font-color);
   font-family: var(--main-font-family);
 }
+
+/* Font  */
+
+@import url("https://fonts.googleapis.com/css2?family=Marvel&display=swap");
 
 /* Variable  */
 

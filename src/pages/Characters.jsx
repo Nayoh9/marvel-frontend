@@ -61,12 +61,14 @@ const Characters = ({ favorites, setFavorites }) => {
                   onClick={() => {
                     const favoritesCopy = [...favorites];
                     favoritesCopy.push(character);
+                    console.log(favoritesCopy);
                     setFavorites(favoritesCopy);
-                    console.log(favorites);
                   }}
                 >
                   Ajouter ce héros à vos favoris !
                 </button>
+                {/* Je verifie si le cookies nommé favorites existe, si oui je
+                prends son tableau et je le map */}
               </div>
             </article>
           );
