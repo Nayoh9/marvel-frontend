@@ -14,7 +14,7 @@ const Comics = ({ favorites, setFavorites }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:3000/comics?limit=${limit}&skip=${skip}&title=${
+        `https://site--marvel-backend--s7xgqdjwl4w7.code.run/comics?limit=${limit}&skip=${skip}&title=${
           searchComic === undefined ? "" : searchComic
         }`
       );
@@ -24,7 +24,7 @@ const Comics = ({ favorites, setFavorites }) => {
     fetchData();
   }, [skip, searchComic]);
 
-  console.log(data);
+  // console.log(data);
 
   return isLoading ? (
     <p className="loading">Loading page ...</p>
@@ -53,6 +53,7 @@ const Comics = ({ favorites, setFavorites }) => {
                 onClick={() => {
                   const favoritesCopy = [...favorites];
                   favoritesCopy.push(comic);
+                  console.log(favoritesCopy);
                   setFavorites(favoritesCopy);
                 }}
               >

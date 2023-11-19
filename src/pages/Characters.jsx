@@ -12,10 +12,12 @@ const Characters = ({ favorites, setFavorites }) => {
 
   const [searchCharacter, setSearchCharacter] = useState();
 
+  const [isFav, setIsFav] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:3000/characters?limit=${limit}&skip=${skip}&name=${
+        `https://site--marvel-backend--s7xgqdjwl4w7.code.run/characters?limit=${limit}&skip=${skip}&name=${
           searchCharacter === undefined ? "" : searchCharacter
         }`
       );
@@ -67,8 +69,6 @@ const Characters = ({ favorites, setFavorites }) => {
                 >
                   Ajouter ce héros à vos favoris !
                 </button>
-                {/* Je verifie si le cookies nommé favorites existe, si oui je
-                prends son tableau et je le map */}
               </div>
             </article>
           );
