@@ -10,24 +10,17 @@ const Character = () => {
   const [data, setData] = useState();
   const [isLoading, setIsloading] = useState(true);
 
-  // Je transforme le tout de chaine de caractère à tableau
-  const tab = id.split(",");
-  console.log(tab);
-
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://site--marvel-backend--s7xgqdjwl4w7.code.run/comics/comics/${tab}`
+        `https://site--marvel-backend--s7xgqdjwl4w7.code.run/character/${id}`
       );
-
       setData(response.data);
       setIsloading(false);
     };
-
     fetchData();
-
-    // console.log(data);
   }, []);
+
   console.log(data);
 
   return isLoading ? (
@@ -35,12 +28,11 @@ const Character = () => {
   ) : (
     <section className="comics-id">
       {data.map((comic) => {
-        // console.log(comic);
         return (
-          <article key={comic._id}>
+          <article key={comic.title}>
             <img
               src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
-              alt="Une BD avec des super héros en couverture"
+              alt={`super héros ${comic.name}`}
             />
           </article>
         );

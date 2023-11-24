@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Cookies from "js-cookie";
 
 const Characters = ({ favorites, setFavorites }) => {
   const [isLoading, setIsloading] = useState(true);
@@ -11,8 +10,6 @@ const Characters = ({ favorites, setFavorites }) => {
   const [skip, setSkip] = useState(0);
 
   const [searchCharacter, setSearchCharacter] = useState();
-
-  const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,14 +45,14 @@ const Characters = ({ favorites, setFavorites }) => {
 
           return (
             <article key={character._id}>
-              <Link to={`/character/${character.comics}}`}>
+              <Link to={`/character/${character._id}}`}>
                 <div>
                   <img
                     src={`${character.thumbnail.path}/portrait_xlarge.jpg`}
                     alt={`super héros ${character.name}`}
                   />
                   <p className="characters-name">Nom : {character.name}</p>
-                  <p>Description : {character.description}</p>
+                  {/* <p>Description : {character.description}</p> */}
                 </div>
               </Link>
               <div className="favorites">
@@ -99,5 +96,3 @@ const Characters = ({ favorites, setFavorites }) => {
 };
 
 export default Characters;
-
-// Créer une check box sur chacune des div, si elle est cochée on push toutes les informations du personnage dans un tableau

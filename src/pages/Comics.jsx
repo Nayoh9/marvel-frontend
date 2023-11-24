@@ -1,5 +1,4 @@
 import axios from "axios";
-import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 
 const Comics = ({ favorites, setFavorites }) => {
@@ -18,6 +17,7 @@ const Comics = ({ favorites, setFavorites }) => {
           searchComic === undefined ? "" : searchComic
         }`
       );
+
       setData(response.data);
       setIsloading(false);
     };
