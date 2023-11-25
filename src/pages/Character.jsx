@@ -20,8 +20,8 @@ const Character = () => {
       );
 
       // const response = await axios.get(`http://localhost:3000/character/${id}`);
-      // setData(response.data);
-      // setIsloading(false);
+      setData(response.data);
+      setIsloading(false);
     };
     fetchData();
   }, []);
