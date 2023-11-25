@@ -13,11 +13,18 @@ const Characters = ({ favorites, setFavorites }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      // const response = await axios.get(
+      //   `https://site--marvel-backend--s7xgqdjwl4w7.code.run/characters?limit=${limit}&skip=${skip}&name=${
+      //     searchCharacter === undefined ? "" : searchCharacter
+      //   }`
+      // );
+
       const response = await axios.get(
-        `https://site--marvel-backend--s7xgqdjwl4w7.code.run/characters?limit=${limit}&skip=${skip}&name=${
+        `http://localhost:3000/characters?limit=${limit}&skip=${skip}&name=${
           searchCharacter === undefined ? "" : searchCharacter
         }`
       );
+
       // console.log(response.data);
       setData(response.data);
 
@@ -41,11 +48,11 @@ const Characters = ({ favorites, setFavorites }) => {
       </div>
       <div className="characters-container">
         {data.results.map((character) => {
-          // console.log(character);
+          // console.log(character._id);
 
           return (
             <article key={character._id}>
-              <Link to={`/character/${character._id}}`}>
+              <Link to={`/character/${character._id}`}>
                 <div>
                   <img
                     src={`${character.thumbnail.path}/portrait_xlarge.jpg`}

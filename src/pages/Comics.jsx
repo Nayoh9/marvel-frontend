@@ -12,8 +12,14 @@ const Comics = ({ favorites, setFavorites }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      // const response = await axios.get(
+      //   `https://site--marvel-backend--s7xgqdjwl4w7.code.run/comics?limit=${limit}&skip=${skip}&title=${
+      //     searchComic === undefined ? "" : searchComic
+      //   }`
+      // );
+
       const response = await axios.get(
-        `https://site--marvel-backend--s7xgqdjwl4w7.code.run/comics?limit=${limit}&skip=${skip}&title=${
+        `http://localhost:3000/comics?limit=${limit}&skip=${skip}&title=${
           searchComic === undefined ? "" : searchComic
         }`
       );

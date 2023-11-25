@@ -102,7 +102,7 @@ a > div {
 
 /* Style de la page Character */
 
-.comics-id {
+.character {
   display: flex;
   flex-wrap: wrap;
 }
