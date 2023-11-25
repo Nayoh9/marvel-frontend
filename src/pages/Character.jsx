@@ -15,13 +15,13 @@ const Character = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // const response = await axios.get(
-      //   `https://site--marvel-backend--s7xgqdjwl4w7.code.run/character/${id}`
-      // );
+      const response = await axios.get(
+        `https://site--marvel-backend--s7xgqdjwl4w7.code.run/character/${id}`
+      );
 
-      const response = await axios.get(`http://localhost:3000/character/${id}`);
-      setData(response.data);
-      setIsloading(false);
+      // const response = await axios.get(`http://localhost:3000/character/${id}`);
+      // setData(response.data);
+      // setIsloading(false);
     };
     fetchData();
   }, []);
