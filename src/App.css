@@ -1,3 +1,10 @@
+/*--------------- General settings ---------------*/
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 .loading {
   height: 100vh;
   background-color: var(--main-bcg-color);
@@ -5,11 +12,11 @@
   font-family: var(--main-font-family);
 }
 
-/* Font  */
+/*-------------- Font  ----------------*/
 
 @import url("https://fonts.googleapis.com/css2?family=Marvel&display=swap");
 
-/* Variable  */
+/*------------- Variable  ---------------*/
 
 :root {
   --main-font-color: white;
@@ -19,7 +26,7 @@
   --main-font-size: 1.5em;
 }
 
-/* Style du header  */
+/*--------------- Style of header -----------*/
 
 header {
   display: flex;
@@ -54,7 +61,7 @@ header a {
   border-radius: 3px;
 }
 
-/* Style de la page CharacterS  */
+/*---------- Style of CharacterS page -----------*/
 
 .characters {
   background-color: var(--main-bcg-color);
@@ -100,33 +107,89 @@ a > div {
   justify-content: center;
 }
 
-/* Style de la page Character */
+/*------------ Style of Character page -------------*/
+
+.character-container {
+  display: flex;
+  justify-content: center;
+}
 
 .character {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
 }
 
-/* Style de la page Comics */
+.character img {
+  width: 150px;
+}
+
+.character-comics {
+  display: flex;
+  justify-content: center;
+  overflow-x: scroll;
+  gap: 10px;
+}
+
+.character-content {
+  min-height: 100vh;
+  background-color: grey;
+}
+
+/*------------ Style of Comics page ------------*/
+
+.comics {
+  background-color: var(--main-bcg-color);
+  min-height: 100vh;
+}
 
 .comics-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .comics-container > article {
-  width: 250px;
   height: 370px;
+  width: 250px;
+  font-family: var(--main-font-family);
+  background-color: var(--second-bcg-color);
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  transition: transform 0.2s;
 }
 
-.comics {
-  border: red 1px solid;
+.comics-container > article:hover {
+  transform: scale(1.1);
+}
+
+.comic {
+  color: var(--main-font-color);
+}
+
+.comics-name {
+  margin-bottom: 30px;
+}
+
+a > div {
+  max-height: 350px;
+  background-color: var(--second-bcg-color);
+  border-radius: 10px;
   width: 250px;
   height: 340px;
   overflow: hidden;
+  color: var(--main-font-color);
 }
 
-/* Style de la page home  */
+.input {
+  display: flex;
+  justify-content: center;
+}
+
+/*------------- Style of home page  --------------*/
 
 .home {
   background: url(./assets/images/marvel-wallaper.jpeg);
@@ -170,4 +233,56 @@ a > div {
   height: 100%;
   z-index: -1;
   transition: height 100ms ease-in-out;
+}
+
+/*------------- Style of signup page  --------------*/
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.signup > form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 25%;
+}
+
+form > input {
+  margin-bottom: 20px;
+}
+
+/*------------- Style of signin page  --------------*/
+
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.signin > form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 25%;
 }

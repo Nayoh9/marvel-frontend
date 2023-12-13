@@ -1,17 +1,12 @@
-import Cookies from "js-cookie";
+// Package import
 import { useEffect } from "react";
 
 const Favorites = ({ favorites, setFavorites }) => {
   useEffect(() => {
-    const local = JSON.stringify(favorites);
-    localStorage.setItem("favorites", local);
-    const recupLocal = localStorage.getItem("favorites");
-    const recupFavorites = JSON.parse(recupLocal);
-    setFavorites(recupFavorites);
     console.log(favorites);
   }, []);
 
-  return localStorage.getItem("favorites") ? (
+  return (
     <section>
       {favorites.map((elem) => {
         return (
@@ -42,8 +37,6 @@ const Favorites = ({ favorites, setFavorites }) => {
         );
       })}
     </section>
-  ) : (
-    ""
   );
 };
 

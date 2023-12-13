@@ -1,8 +1,12 @@
+// Dynamic adress
+import baseAPI from "../utils/api";
+
+// Package import
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Characters = ({ favorites, setFavorites }) => {
+const Characters = () => {
   const [isLoading, setIsloading] = useState(true);
   const [data, setData] = useState();
 
@@ -12,25 +16,23 @@ const Characters = ({ favorites, setFavorites }) => {
   const [searchCharacter, setSearchCharacter] = useState();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        `https://site--marvel-backend--s7xgqdjwl4w7.code.run/characters?limit=${limit}&skip=${skip}&name=${
-          searchCharacter === undefined ? "" : searchCharacter
-        }`
-      );
+    try {
+      const fetchData = async () => {
+        const response = await axios.get(
+          `${baseAPI}/characters?limit=${limit}&skip=${skip}&name=${
+            searchCharacter === undefined ? "" : searchCharacter
+          }`
+        );
 
-      // const response = await axios.get(
-      //   `http://localhost:3000/characters?limit=${limit}&skip=${skip}&name=${
-      //     searchCharacter === undefined ? "" : searchCharacter
-      //   }`
-      // );
+        // console.log(response.data);
+        setData(response.data);
 
-      // console.log(response.data);
-      setData(response.data);
-
-      setIsloading(false);
-    };
-    fetchData();
+        setIsloading(false);
+      };
+      fetchData();
+    } catch (error) {
+      console.log(error.message);
+    }
   }, [skip, searchCharacter, limit]);
   // console.log(data);
 
@@ -59,21 +61,8 @@ const Characters = ({ favorites, setFavorites }) => {
                     alt={`super héros ${character.name}`}
                   />
                   <p className="characters-name">Nom : {character.name}</p>
-                  {/* <p>Description : {character.description}</p> */}
                 </div>
               </Link>
-              <div className="favorites">
-                <button
-                  onClick={() => {
-                    const favoritesCopy = [...favorites];
-                    favoritesCopy.push(character);
-                    console.log(favoritesCopy);
-                    setFavorites(favoritesCopy);
-                  }}
-                >
-                  Ajouter ce héros à vos favoris !
-                </button>
-              </div>
             </article>
           );
         })}
