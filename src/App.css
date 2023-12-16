@@ -12,6 +12,14 @@
   font-family: var(--main-font-family);
 }
 
+p {
+  font-family: var(--main-font-family);
+}
+
+a {
+  font-family: var(--main-font-family);
+}
+
 /*-------------- Font  ----------------*/
 
 @import url("https://fonts.googleapis.com/css2?family=Marvel&display=swap");
@@ -22,7 +30,7 @@
   --main-font-color: white;
   --main-bcg-color: #000000;
   --second-bcg-color: #1a1b1d;
-  --main-font-family: "Marvel";
+  --main-font-family: "arial";
   --main-font-size: 1.5em;
 }
 
@@ -133,7 +141,7 @@ a > div {
 }
 
 .character-content {
-  min-height: 100vh;
+  height: calc(100vh - 100px);
   background-color: grey;
 }
 
@@ -189,6 +197,13 @@ a > div {
   justify-content: center;
 }
 
+/*------------- Style of favorites page  --------------*/
+
+.favorites-container {
+  background-color: grey;
+  height: calc(100vh - 100px);
+}
+
 /*------------- Style of home page  --------------*/
 
 .home {
@@ -241,7 +256,7 @@ a > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: calc(100vh - 100px);
 }
 
 .signup {
@@ -256,11 +271,16 @@ a > div {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 25%;
 }
 
 form > input {
   margin-bottom: 20px;
+}
+
+.signup-container a {
+  color: black;
 }
 
 /*------------- Style of signin page  --------------*/
@@ -269,7 +289,7 @@ form > input {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: calc(100vh - 100px);
 }
 
 .signin {
@@ -284,5 +304,12 @@ form > input {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 25%;
+}
+
+.signin-container a,
+.signin-container p {
+  color: black;
+  font-family: var(--main-font-family);
 }

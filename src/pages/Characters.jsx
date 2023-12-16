@@ -3,6 +3,7 @@ import baseAPI from "../utils/api";
 
 // Package import
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -54,13 +55,19 @@ const Characters = () => {
 
           return (
             <article key={character._id}>
-              <Link to={`/character/${character._id}`}>
+              <Link
+                to={
+                  Cookies.get("token_marvel")
+                    ? `/character/${character._id}`
+                    : "/signin"
+                }
+              >
                 <div>
                   <img
                     src={`${character.thumbnail.path}/portrait_xlarge.jpg`}
                     alt={`super héros ${character.name}`}
                   />
-                  <p className="characters-name">Nom : {character.name}</p>
+                  <p className="characters-name">Name : {character.name}</p>
                 </div>
               </Link>
             </article>
@@ -74,7 +81,7 @@ const Characters = () => {
           }}
           style={{ display: skip > 0 ? "inline" : "none" }}
         >
-          Page précédente
+          Previous page
         </button>
 
         <button
@@ -84,7 +91,7 @@ const Characters = () => {
           }}
           style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
         >
-          Page suivante
+          Next page
         </button>
       </div>
     </section>

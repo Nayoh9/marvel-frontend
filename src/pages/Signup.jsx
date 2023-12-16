@@ -1,14 +1,21 @@
 // Package import
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ isConnected, setIsConnected }) => {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
+
   const [allFields, setAllFields] = useState(false);
   const [samePasswords, setSamePasswords] = useState(false);
+  const [emailAlreadyExist, setEmailAlreadyExist] = useState(false);
+  const [passwordLength, setPasswordLength] = useState(false);
 
   const handleSubmit = async (e) => {
     try {
@@ -23,15 +30,21 @@ const Signup = () => {
           return setSamePasswords(true);
         }
 
-      let count = 0;
-      for (let i = 0; i < email.length; i++) {
-        if (email[i] === "@") {
-          count++;
-        }
+      if (!email || !email.trim()) {
+        return setAllFields(true);
       }
 
-      if (!email || !email.trim() || count !== 1) {
-        return setAllFields(true);
+      // let count = 0;
+      // for (let i = 0; i < email.length; i++) {
+      //   if (email[i] === "@") {
+      //     count++;
+      //   }
+      //   if (count !== 1) {
+      //   }
+      // }
+
+      if (password.length < 6) {
+        return setPasswordLength(true);
       }
 
       const response = await axios.post("http://localhost:3000/signup", {
@@ -41,9 +54,19 @@ const Signup = () => {
         confirmPassword,
       });
 
-      console.log(response.data);
+      const token = response.data.token;
+
+      Cookies.set("token_marvel", token);
+
+      setIsConnected(true);
+
+      navigate("/characters");
+
+      // console.log(token);
     } catch (error) {
-      console.log(error.message);
+      if (error.response.data === "this email already exist") {
+        return setEmailAlreadyExist(true);
+      }
     }
   };
 
@@ -55,18 +78,21 @@ const Signup = () => {
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
     setAllFields(false);
+    setEmailAlreadyExist(false);
   };
 
   const handleChangePassword = (e) => {
     setPassword(e.target.value);
     setAllFields(false);
     setSamePasswords(false);
+    setPasswordLength(false);
   };
 
   const handleChangeConfirmPassword = (e) => {
     setConfirmPassword(e.target.value);
     setAllFields(false);
     setSamePasswords(false);
+    setPasswordLength(false);
   };
 
   return (
@@ -103,18 +129,41 @@ const Signup = () => {
           />
 
           {allFields ? (
-            <p style={{ color: "red" }}>Please fill all the fields</p>
+            <p style={{ color: "red", fontWeight: "bold", fontSize: "15px" }}>
+              Please fill all the fields
+            </p>
           ) : (
             ""
           )}
           {samePasswords ? (
-            <p style={{ color: "red" }}>Passwords must be the same</p>
+            <p style={{ color: "red", fontWeight: "bold", fontSize: "15px" }}>
+              Passwords must be the same
+            </p>
+          ) : (
+            ""
+          )}
+
+          {emailAlreadyExist ? (
+            <p style={{ color: "red", fontWeight: "bold", fontSize: "15px" }}>
+              This email already exist{" "}
+            </p>
+          ) : (
+            ""
+          )}
+
+          {passwordLength ? (
+            <p style={{ color: "red", fontWeight: "bold", fontSize: "15px" }}>
+              Password must be at least 6 characters
+            </p>
           ) : (
             ""
           )}
 
           <button type="submit">Signup !</button>
         </form>
+        <Link to={"/signin"}>
+          <p>Already have an account ? Signin here !</p>
+        </Link>
       </article>
     </section>
   );

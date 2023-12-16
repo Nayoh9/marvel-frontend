@@ -1,6 +1,15 @@
+// Package import
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ setIsConnected, isConnected }) => {
+  useEffect(() => {
+    if (Cookies.get("token_marvel")) {
+      setIsConnected(true);
+    }
+  }, [isConnected]);
+
   return (
     <header>
       <Link to={"/"}>
@@ -13,14 +22,30 @@ const Header = () => {
 
       <ul>
         <Link to={"/characters"}>
-          <li>Personnages</li>
+          <li>Characters</li>
         </Link>
+
         <Link to={"/comics"}>
           <li>Comics</li>
         </Link>
-        <Link to={"/favorites"}>
-          <li>Favoris</li>
+
+        <Link to={isConnected ? "/favorites" : "/signin"} className="signout">
+          <li>Favorites</li>
         </Link>
+
+        {isConnected ? (
+          <Link
+            to={"/"}
+            onClick={() => {
+              Cookies.remove("token_marvel");
+              setIsConnected(false);
+            }}
+          >
+            Sign out
+          </Link>
+        ) : (
+          ""
+        )}
       </ul>
     </header>
   );

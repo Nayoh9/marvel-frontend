@@ -7,7 +7,7 @@ const Favorites = ({ favorites, setFavorites }) => {
   }, []);
 
   return (
-    <section>
+    <section className="favorites-container">
       {favorites.map((elem) => {
         return (
           <article key={elem._id}>

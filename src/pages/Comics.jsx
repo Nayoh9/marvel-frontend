@@ -3,6 +3,7 @@ import baseAPI from "../utils/api";
 
 // Package import
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -49,7 +50,13 @@ const Comics = ({ favorites, setFavorites }) => {
           // console.log(comic);
           return (
             <article key={comic._id}>
-              <Link to={`/comic/${comic._id}`}>
+              <Link
+                to={
+                  Cookies.get("token_marvel")
+                    ? `/comic/${comic._id}`
+                    : "/signin"
+                }
+              >
                 <div className="comic">
                   <img
                     src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
@@ -70,7 +77,7 @@ const Comics = ({ favorites, setFavorites }) => {
             }}
             style={{ display: skip === 0 ? "none" : "inline" }}
           >
-            Page précédente
+            Next page
           </button>
 
           <button
@@ -80,7 +87,7 @@ const Comics = ({ favorites, setFavorites }) => {
             }}
             style={{ display: skip === data.count - 100 ? "none" : "inline" }}
           >
-            Page suivante
+            Previous page
           </button>
         </div>
       </div>

@@ -20,10 +20,11 @@ import Signin from "./pages/Signin";
 
 function App() {
   const [favorites, setFavorites] = useState([]);
+  const [isConnected, setIsConnected] = useState(false);
 
   return (
     <Router>
-      <Header />
+      <Header isConnected={isConnected} setIsConnected={setIsConnected} />
       <Routes>
         <Route path={"/"} element={<Home />} />
 
@@ -36,10 +37,7 @@ function App() {
           }
         />
 
-        <Route
-          path={"/comics"}
-          element={<Comics favorites={favorites} setFavorites={setFavorites} />}
-        />
+        <Route path={"/comics"} element={<Comics />} />
 
         <Route path={"/comic/:id"} element={<Comic />} />
 
@@ -50,9 +48,19 @@ function App() {
           }
         />
 
-        <Route path="signup" element={<Signup />} />
+        <Route
+          path="signup"
+          element={
+            <Signup isConnected={isConnected} setIsConnected={setIsConnected} />
+          }
+        />
 
-        <Route path="signin" element={<Signin />} />
+        <Route
+          path="signin"
+          element={
+            <Signin isConnected={isConnected} setIsConnected={setIsConnected} />
+          }
+        />
       </Routes>
     </Router>
   );
