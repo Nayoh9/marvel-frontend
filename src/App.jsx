@@ -39,7 +39,10 @@ function App() {
 
         <Route path={"/comics"} element={<Comics />} />
 
-        <Route path={"/comic/:id"} element={<Comic />} />
+        <Route
+          path={"/comic/:id"}
+          element={<Comic setFavorites={setFavorites} favorites={favorites} />}
+        />
 
         <Route
           path={"/favorites"}

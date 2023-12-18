@@ -6,7 +6,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const Comic = () => {
+const Comic = ({ favorites, setFavorites }) => {
   const params = useParams();
   const id = params.id;
 
@@ -18,9 +18,10 @@ const Comic = () => {
       const response = await axios.get(`${baseAPI}/comic/${id}`);
       setData(response.data);
       setIsloading(false);
+      console.log(favorites);
     };
     fetchData();
-  });
+  }, []);
 
   return isLoading ? (
     <p className="loading">Loading page ...</p>

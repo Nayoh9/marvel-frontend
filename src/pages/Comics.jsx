@@ -17,17 +17,20 @@ const Comics = ({ favorites, setFavorites }) => {
   const [searchComic, setSearchComic] = useState();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        `${baseAPI}/comics?limit=${limit}&skip=${skip}&title=${
-          searchComic === undefined ? "" : searchComic
-        }`
-      );
-
-      setData(response.data);
-      setIsloading(false);
-    };
-    fetchData();
+    try {
+      const fetchData = async () => {
+        const response = await axios.get(
+          `${baseAPI}/comics?limit=${limit}&skip=${skip}&title=${
+            searchComic === undefined ? "" : searchComic
+          }`
+        );
+        setData(response.data);
+        setIsloading(false);
+      };
+      fetchData();
+    } catch (error) {
+      console.log(error.message);
+    }
   }, [skip, searchComic]);
 
   // console.log(data);
