@@ -65,7 +65,7 @@ const Comics = ({ favorites, setFavorites }) => {
                     src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
                     alt={`image de la BD dont le titre est ${comic.title}`}
                   />
-                  <p className="comics-name">Titre :{comic.title}</p>
+                  <p className="comics-name">{comic.title}</p>
                 </div>
               </Link>
             </article>

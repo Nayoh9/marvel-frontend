@@ -38,23 +38,27 @@ const Character = ({ favorites, setFavorites }) => {
     } catch (error) {
       console.log(error.message);
     }
-  }, [favorites]);
+  }, [favorites, id]);
 
   // console.log("userfavlist >>", userFavList);
 
   // To verify if a favorites is existing in the fav_list array
+
   useEffect(() => {
     if (userFavList) {
       const existInFavList = userFavList.find(
         (element) => element._id === data._id
       );
+      console.log(existInFavList);
       if (existInFavList) {
         setIsClicked(true);
       } else {
         setIsClicked(false);
       }
     }
-  }, [userFavList, data]);
+  }, [userFavList, id]);
+
+  // console.log(data._id);
 
   const handleAddToFavorites = async () => {
     const favoritesCopy = [...userFavList];
@@ -80,19 +84,34 @@ const Character = ({ favorites, setFavorites }) => {
       }
     );
 
-    console.log(response.data);
+    // console.log(response.data);
   };
 
   const handleRemoveFromFavorites = async () => {
     const favoritesCopy = [...userFavList];
     for (let i = 0; i < favoritesCopy.length; i++) {
       if (favoritesCopy[i]._id === data._id) {
-        favoritesCopy.splice(favoritesCopy[i], 1);
-        console.log(favoritesCopy);
+        favoritesCopy.splice(i, 1);
         setFavorites(favoritesCopy);
         setIsClicked(false);
       }
     }
+
+    const response = await axios.put(
+      `${baseAPI}/user/update`,
+      {
+        key_fav_list: "fav_list",
+        value_fav_list: favoritesCopy,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Cookies.get("token_marvel")}`,
+        },
+      }
+    );
+
+    // console.log(response.data);
   };
 
   return isLoading ? (
@@ -122,7 +141,7 @@ const Character = ({ favorites, setFavorites }) => {
             <article key={comic.title}>
               <img
                 src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
-                alt={`super héros ${comic.name}`}
+                alt={`comic ${comic.title}`}
               />
             </article>
           );

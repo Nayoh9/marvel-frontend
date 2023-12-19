@@ -67,7 +67,7 @@ const Characters = () => {
                     src={`${character.thumbnail.path}/portrait_xlarge.jpg`}
                     alt={`super héros ${character.name}`}
                   />
-                  <p className="characters-name">Name : {character.name}</p>
+                  <p className="characters-name">{character.name}</p>
                 </div>
               </Link>
             </article>

@@ -1,39 +1,46 @@
+// Dynamic adress
+import baseAPI from "../utils/api";
+
 // Package import
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Favorites = ({ favorites, setFavorites }) => {
+  const [data, setData] = useState();
+  const [isLoading, setIsloading] = useState(true);
+
   useEffect(() => {
-    console.log(favorites);
+    const fecthData = async () => {
+      const response = await axios.get(`${baseAPI}/user/find`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Cookies.get("token_marvel")}`,
+        },
+      });
+      setData(response.data);
+      setIsloading(false);
+    };
+    fecthData();
   }, []);
 
-  return (
+  return isLoading ? (
+    <p className="loading">Loading page ...</p>
+  ) : (
     <section className="favorites-container">
-      {favorites.map((elem) => {
+      {data.map((elem) => {
         return (
-          <article key={elem._id}>
-            <img src={`${elem.thumbnail.path}/portrait_xlarge.jpg`} alt="" />
-            <p>{elem.name}</p>
-            <p>{elem.description}</p>
-            <div>
-              <button
-                onClick={() => {
-                  console.log(elem._id);
-                  for (let i = 0; i < favorites.length; i++) {
-                    if (elem._id === favorites[i]._id) {
-                      console.log("trouvé =>", elem._id);
-                      const newTab = [...favorites];
-                      console.log(favorites[i]);
-                      console.log(i);
-                      newTab.splice(i, 1);
-                      setFavorites(newTab);
-                    }
-                  }
-                }}
-              >
-                Retirer des favoris
-              </button>
-            </div>
-          </article>
+          <Link
+            to={elem.title ? `/comic/${elem._id}` : `/character/${elem._id}`}
+            key={elem._id}
+          >
+            <article>
+              <img src={`${elem.thumbnail.path}/portrait_xlarge.jpg`} alt="" />
+              <p>{elem.name ? elem.name : elem.title}</p>
+              <p>{elem.description}</p>
+            </article>
+          </Link>
         );
       })}
     </section>
