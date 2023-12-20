@@ -5,7 +5,7 @@ import baseAPI from "../utils/api";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Comics = ({ favorites, setFavorites }) => {
   const [data, setData] = useState();
@@ -13,8 +13,9 @@ const Comics = ({ favorites, setFavorites }) => {
 
   const [limit, setLimit] = useState(100);
   const [skip, setSkip] = useState(0);
-
   const [searchComic, setSearchComic] = useState();
+
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     try {
@@ -35,17 +36,26 @@ const Comics = ({ favorites, setFavorites }) => {
 
   // console.log(data);
 
+  const handleChangeInput = (e) => {
+    let value = e.target.value;
+    setSkip(0);
+    setSearchParams({ search: value });
+    for (let i = 0; i < value.length; i++) {
+      // console.log(value[i]);
+      if (value[i] === "(" || value[i] === ")" || value[i] === "*") {
+        return setSearchComic("");
+      } else {
+        setSearchComic(value);
+      }
+    }
+  };
+
   return isLoading ? (
     <p className="loading">Loading page ...</p>
   ) : (
     <section className="comics">
       <div className="input">
-        <input
-          type="text"
-          onChange={(e) => {
-            setSearchComic(e.target.value);
-          }}
-        />
+        <input type="text" onChange={handleChangeInput} />
       </div>
 
       <div className="comics-container">
@@ -62,8 +72,12 @@ const Comics = ({ favorites, setFavorites }) => {
               >
                 <div className="comic">
                   <img
-                    src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
-                    alt={`image de la BD dont le titre est ${comic.title}`}
+                    src={
+                      comic.thumbnail.extension === "jpg"
+                        ? `${comic.thumbnail.path}/portrait_xlarge.jpg`
+                        : "./src/assets/images/hero-noavailable.jpeg"
+                    }
+                    alt={`picture of the comic ${comic.title}`}
                   />
                   <p className="comics-name">{comic.title}</p>
                 </div>
@@ -76,21 +90,20 @@ const Comics = ({ favorites, setFavorites }) => {
           <button
             onClick={() => {
               setSkip(skip - limit);
-              console.log(skip);
+              // console.log(skip);
             }}
             style={{ display: skip === 0 ? "none" : "inline" }}
           >
-            Next page
+            Previous page
           </button>
-
           <button
             onClick={() => {
               setSkip(skip + limit);
-              console.log(skip);
+              // console.log(skip);
             }}
             style={{ display: skip === data.count - 100 ? "none" : "inline" }}
           >
-            Previous page
+            Next page
           </button>
         </div>
       </div>

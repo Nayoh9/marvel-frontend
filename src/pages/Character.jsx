@@ -49,7 +49,7 @@ const Character = ({ favorites, setFavorites }) => {
       const existInFavList = userFavList.find(
         (element) => element._id === data._id
       );
-      console.log(existInFavList);
+      // console.log(existInFavList);
       if (existInFavList) {
         setIsClicked(true);
       } else {
@@ -132,6 +132,7 @@ const Character = ({ favorites, setFavorites }) => {
               Remove this hero from your favorites
             </button>
           )}
+          <p>You can find this hero in the following comics :</p>
         </article>
       </section>
 

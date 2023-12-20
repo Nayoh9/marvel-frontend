@@ -115,6 +115,14 @@ a > div {
   justify-content: center;
 }
 
+.characters-button  {
+  display: flex;
+}
+
+.characters-button span {
+  color: white;
+}
+
 /*------------ Style of Character page -------------*/
 
 .character-container {

@@ -5,16 +5,17 @@ import baseAPI from "../utils/api";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Characters = () => {
   const [isLoading, setIsloading] = useState(true);
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
 
   const [limit, setLimit] = useState(100);
   const [skip, setSkip] = useState(0);
+  const [searchCharacter, setSearchCharacter] = useState("");
 
-  const [searchCharacter, setSearchCharacter] = useState();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     try {
@@ -24,10 +25,8 @@ const Characters = () => {
             searchCharacter === undefined ? "" : searchCharacter
           }`
         );
-
         // console.log(response.data);
         setData(response.data);
-
         setIsloading(false);
       };
       fetchData();
@@ -37,17 +36,26 @@ const Characters = () => {
   }, [skip, searchCharacter, limit]);
   // console.log(data);
 
+  const handleChangeInput = (e) => {
+    let value = e.target.value;
+    setSkip(0);
+    setSearchParams({ search: value });
+    for (let i = 0; i < value.length; i++) {
+      // console.log(value[i]);
+      if (value[i] === "(" || value[i] === ")" || value[i] === "*") {
+        return setSearchCharacter("");
+      } else {
+        setSearchCharacter(value);
+      }
+    }
+  };
+
   return isLoading ? (
     <p className="loading">loading page ...</p>
   ) : (
     <section className="characters">
       <div className="input">
-        <input
-          type="text"
-          onChange={(e) => {
-            setSearchCharacter(e.target.value);
-          }}
-        />
+        <input type="text" onChange={handleChangeInput} />
       </div>
       <div className="characters-container">
         {data.results.map((character) => {
@@ -64,8 +72,12 @@ const Characters = () => {
               >
                 <div>
                   <img
-                    src={`${character.thumbnail.path}/portrait_xlarge.jpg`}
-                    alt={`super héros ${character.name}`}
+                    src={
+                      character.thumbnail.extension === "jpg"
+                        ? `${character.thumbnail.path}/portrait_xlarge.jpg`
+                        : "./src/assets/images/hero-noavailable.jpeg"
+                    }
+                    alt={`super hero ${character.name}`}
                   />
                   <p className="characters-name">{character.name}</p>
                 </div>
@@ -74,7 +86,7 @@ const Characters = () => {
           );
         })}
       </div>
-      <div>
+      <div className="characters-button">
         <button
           onClick={() => {
             setSkip(skip - limit);
@@ -87,7 +99,7 @@ const Characters = () => {
         <button
           onClick={() => {
             setSkip(skip + limit);
-            console.log(skip);
+            // console.log(skip);
           }}
           style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
         >

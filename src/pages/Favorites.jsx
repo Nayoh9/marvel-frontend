@@ -10,25 +10,34 @@ import { Link } from "react-router-dom";
 const Favorites = ({ favorites, setFavorites }) => {
   const [data, setData] = useState();
   const [isLoading, setIsloading] = useState(true);
+  const [favEmpty, setFavEmpty] = useState(false);
 
   useEffect(() => {
-    const fecthData = async () => {
-      const response = await axios.get(`${baseAPI}/user/find`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${Cookies.get("token_marvel")}`,
-        },
-      });
-      setData(response.data);
-      setIsloading(false);
-    };
-    fecthData();
+    try {
+      const fecthData = async () => {
+        const response = await axios.get(`${baseAPI}/user/find`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Cookies.get("token_marvel")}`,
+          },
+        });
+
+        setData(response.data);
+        response.data.length === 0 && setFavEmpty(true);
+        setIsloading(false);
+      };
+      fecthData();
+    } catch (error) {
+      console.log(error.message);
+    }
   }, []);
 
+  console.log(data);
   return isLoading ? (
     <p className="loading">Loading page ...</p>
   ) : (
     <section className="favorites-container">
+      {favEmpty && <p>Nothing here please fill your favorites !</p>}
       {data.map((elem) => {
         return (
           <Link
