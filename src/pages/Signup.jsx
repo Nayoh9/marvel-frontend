@@ -1,3 +1,6 @@
+// Dynamic adress
+import baseAPI from "../utils/api";
+
 // Package import
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -24,29 +27,24 @@ const Signup = ({ isConnected, setIsConnected }) => {
       if (!username || !username.trim()) {
         return setAllFields(true);
       }
-      console.log("1");
       if (!email || !email.trim()) {
         return setAllFields(true);
       }
-      console.log("2");
       if (!password || !password.trim()) {
         return setAllFields(true);
       }
-      console.log("3");
       if (!confirmPassword || !confirmPassword.trim()) {
         return setAllFields(true);
       }
-      console.log("4");
       if (password !== confirmPassword) {
         return setSamePasswords(true);
       }
 
-      console.log("5");
       if (password && password.length < 6) {
         return setPasswordLength(true);
       }
-      console.log("6");
-      const response = await axios.post("http://localhost:3000/signup", {
+
+      const response = await axios.post(`${baseAPI}/signup`, {
         username,
         email,
         password,
