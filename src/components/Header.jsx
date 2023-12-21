@@ -11,7 +11,7 @@ const Header = ({ setIsConnected, isConnected }) => {
   }, [isConnected]);
 
   return (
-    <header>
+    <header id="header">
       <Link to={"/"}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Marvel_Logo.svg"

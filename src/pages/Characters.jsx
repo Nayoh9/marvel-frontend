@@ -35,21 +35,20 @@ const Characters = () => {
       console.log(error.message);
     }
   }, [skip, searchCharacter, limit]);
-  console.log(data);
+  // console.log(data);
 
   const handleChangeInput = (e) => {
     let value = e.target.value;
     setSkip(0);
     setCurrentPage(1);
-    setSearchParams({ search: value });
     for (let i = 0; i < value.length; i++) {
       // console.log(value[i]);
       if (value[i] === "(" || value[i] === ")" || value[i] === "*") {
         return setSearchCharacter("");
-      } else {
-        setSearchCharacter(value);
       }
+      setSearchCharacter(value);
     }
+    setSearchParams({ search: value, page: currentPage });
   };
 
   return isLoading ? (
@@ -93,21 +92,25 @@ const Characters = () => {
           onClick={() => {
             setSkip(skip - limit);
             setCurrentPage(currentPage - 1);
+            setSearchParams({ search: searchCharacter, page: currentPage - 1 });
           }}
           style={{ display: skip > 0 ? "inline" : "none" }}
         >
-          Previous page
+          <a href="#header">Previous page</a>
         </button>
-        <span>{currentPage}</span>
+        <span style={{ display: skip >= data.count - 100 ? "none" : "inline" }}>
+          {currentPage}
+        </span>
         <button
           onClick={() => {
             setSkip(skip + limit);
             setCurrentPage(currentPage + 1);
+            setSearchParams({ search: searchCharacter, page: currentPage + 1 });
             // console.log(skip);
           }}
           style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
         >
-          Next page
+          <a href="#header">Next page</a>
         </button>
       </div>
     </section>

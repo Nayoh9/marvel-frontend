@@ -201,6 +201,10 @@ a > div {
   justify-content: center;
 }
 
+.comics-button span {
+  color: white;
+}
+
 /*------------- Style of comic page  --------------*/
 
 .comic-container {

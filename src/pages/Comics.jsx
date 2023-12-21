@@ -14,6 +14,7 @@ const Comics = ({ favorites, setFavorites }) => {
   const [limit, setLimit] = useState(100);
   const [skip, setSkip] = useState(0);
   const [searchComic, setSearchComic] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -34,20 +35,20 @@ const Comics = ({ favorites, setFavorites }) => {
     }
   }, [skip, searchComic]);
 
-  // console.log(data);
+  console.log(data);
 
   const handleChangeInput = (e) => {
     let value = e.target.value;
     setSkip(0);
-    setSearchParams({ search: value });
+    setCurrentPage(1);
     for (let i = 0; i < value.length; i++) {
       // console.log(value[i]);
       if (value[i] === "(" || value[i] === ")" || value[i] === "*") {
         return setSearchComic("");
-      } else {
-        setSearchComic(value);
       }
+      setSearchComic(value);
     }
+    setSearchParams({ search: value, page: currentPage });
   };
 
   return isLoading ? (
@@ -74,7 +75,7 @@ const Comics = ({ favorites, setFavorites }) => {
                   <img
                     src={
                       comic.thumbnail.extension === "jpg"
-                        ? `${comic.thumbnail.path}/portrait_xlarge.jpg`
+                        ? `${comic.thumbnail.path}.jpg`
                         : "https://res.cloudinary.com/dwkwlok28/image/upload/v1703163367/c5d0j21rtliuduc0sddv.jpg"
                     }
                     alt={`picture of the comic ${comic.title}`}
@@ -85,27 +86,35 @@ const Comics = ({ favorites, setFavorites }) => {
             </article>
           );
         })}
+      </div>
+      <div className="comics-button">
+        <button
+          onClick={() => {
+            setSkip(skip - limit);
+            setCurrentPage(currentPage - 1);
+            setSearchParams({ search: searchComic, page: currentPage - 1 });
 
-        <div>
-          <button
-            onClick={() => {
-              setSkip(skip - limit);
-              // console.log(skip);
-            }}
-            style={{ display: skip === 0 ? "none" : "inline" }}
-          >
-            Previous page
-          </button>
-          <button
-            onClick={() => {
-              setSkip(skip + limit);
-              // console.log(skip);
-            }}
-            style={{ display: skip === data.count - 100 ? "none" : "inline" }}
-          >
-            Next page
-          </button>
-        </div>
+            // console.log(skip);
+          }}
+          style={{ display: skip === 0 ? "none" : "inline" }}
+        >
+          <a href="#header">Previous page</a>
+        </button>
+        <span style={{ display: skip >= data.count - 100 ? "none" : "inline" }}>
+          {currentPage}
+        </span>
+        <button
+          onClick={() => {
+            setSkip(skip + limit);
+            setCurrentPage(currentPage + 1);
+            setSearchParams({ search: searchComic, page: currentPage + 1 });
+            // setSearchParams({ search: searchCharacter, page: currentPage + 1 });
+            // console.log(skip);
+          }}
+          style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
+        >
+          <a href="#header">Next page</a>
+        </button>
       </div>
     </section>
   );
