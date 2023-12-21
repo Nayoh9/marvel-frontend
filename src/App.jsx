@@ -26,7 +26,12 @@ function App() {
     <Router>
       <Header isConnected={isConnected} setIsConnected={setIsConnected} />
       <Routes>
-        <Route path={"/"} element={<Home />} />
+        <Route
+          path={"/"}
+          element={
+            <Home isConnected={isConnected} setIsConnected={setIsConnected} />
+          }
+        />
 
         <Route path={"/characters"} element={<Characters />} />
 

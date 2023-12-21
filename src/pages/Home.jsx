@@ -1,7 +1,7 @@
 // Package import
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ isConnected, setIsConnected }) => {
   return (
     <section className="home">
       <div className="home-buttons">
@@ -11,7 +11,7 @@ const Home = () => {
         <Link to="/comics">
           <button>Comics</button>
         </Link>
-        <Link to="/favorites">
+        <Link to={isConnected ? "/favorites" : "/signin"}>
           <button>Favoris</button>
         </Link>
       </div>

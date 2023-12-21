@@ -13,7 +13,7 @@ const Character = ({ favorites, setFavorites }) => {
 
   const [data, setData] = useState();
   const [isLoading, setIsloading] = useState(true);
-  const [userFavList, setUserFavList] = useState();
+  const [userFavList, setUserFavList] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {

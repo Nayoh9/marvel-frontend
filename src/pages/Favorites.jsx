@@ -32,7 +32,7 @@ const Favorites = ({ favorites, setFavorites }) => {
     }
   }, []);
 
-  console.log(data);
+  // console.log(data);
   return isLoading ? (
     <p className="loading">Loading page ...</p>
   ) : (

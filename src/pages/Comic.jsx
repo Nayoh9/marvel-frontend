@@ -14,7 +14,7 @@ const Comic = ({ favorites, setFavorites }) => {
   const [data, setData] = useState();
   const [isLoading, setIsloading] = useState(true);
   const [isClicked, setIsClicked] = useState(false);
-  const [userFavList, setUserFavList] = useState();
+  const [userFavList, setUserFavList] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {

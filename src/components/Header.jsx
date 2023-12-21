@@ -29,7 +29,7 @@ const Header = ({ setIsConnected, isConnected }) => {
           <li>Comics</li>
         </Link>
 
-        <Link to={isConnected ? "/favorites" : "/signin"} className="signout">
+        <Link to={isConnected ? "/favorites" : "/signin"}>
           <li>Favorites</li>
         </Link>
 
