@@ -38,7 +38,7 @@ const Character = ({ favorites, setFavorites }) => {
     } catch (error) {
       console.log(error.message);
     }
-  }, [favorites, id, currentCharacter]);
+  }, [favorites, id]);
 
   // console.log("userfavlist >>", userFavList);
 
