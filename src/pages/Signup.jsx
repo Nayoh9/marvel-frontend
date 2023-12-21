@@ -25,25 +25,23 @@ const Signup = ({ isConnected, setIsConnected }) => {
         return setAllFields(true);
       }
 
-      if (!password || password.trim())
-        if (password !== confirmPassword) {
-          return setSamePasswords(true);
-        }
-
       if (!email || !email.trim()) {
         return setAllFields(true);
       }
 
-      // let count = 0;
-      // for (let i = 0; i < email.length; i++) {
-      //   if (email[i] === "@") {
-      //     count++;
-      //   }
-      //   if (count !== 1) {
-      //   }
-      // }
+      if (!password || !password.trim()) {
+        return setAllFields(true);
+      }
 
-      if (password.length < 6) {
+      if (!confirmPassword || !confirmPassword.trim()) {
+        return setAllFields(true);
+      }
+
+      if (password !== confirmPassword) {
+        return setSamePasswords(true);
+      }
+
+      if (password && password.length < 6) {
         return setPasswordLength(true);
       }
 
@@ -65,7 +63,7 @@ const Signup = ({ isConnected, setIsConnected }) => {
       // console.log(token);
     } catch (error) {
       console.log(error);
-      if (error.response.data === "this email already exist") {
+      if (error.response.data === "This email address is already in use") {
         return setEmailAlreadyExist(true);
       }
     }
@@ -146,7 +144,7 @@ const Signup = ({ isConnected, setIsConnected }) => {
 
           {emailAlreadyExist ? (
             <p style={{ color: "red", fontWeight: "bold", fontSize: "15px" }}>
-              This email already exist{" "}
+              This email address is already in use
             </p>
           ) : (
             ""
