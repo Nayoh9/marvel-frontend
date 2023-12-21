@@ -11,11 +11,6 @@ const Character = ({ favorites, setFavorites }) => {
   const params = useParams();
   const id = params.characterID;
 
-  Cookies.set("current-character", id);
-  const currentCharacter = id ? id : Cookies.get("current-character");
-
-  console.log(currentCharacter);
-
   const [data, setData] = useState();
   const [isLoading, setIsloading] = useState(true);
   const [userFavList, setUserFavList] = useState([]);
@@ -25,9 +20,7 @@ const Character = ({ favorites, setFavorites }) => {
     try {
       // Infomations about the character
       const fetchData = async () => {
-        const response = await axios.get(
-          `${baseAPI}/character/${currentCharacter}`
-        );
+        const response = await axios.get(`${baseAPI}/character/${id}`);
         setData(response.data);
         setIsloading(false);
 
