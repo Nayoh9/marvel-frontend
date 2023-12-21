@@ -34,7 +34,7 @@ const Characters = () => {
       console.log(error.message);
     }
   }, [skip, searchCharacter, limit]);
-  // console.log(data);
+  console.log(data);
 
   const handleChangeInput = (e) => {
     let value = e.target.value;

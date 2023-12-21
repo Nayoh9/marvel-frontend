@@ -64,6 +64,7 @@ const Signup = ({ isConnected, setIsConnected }) => {
 
       // console.log(token);
     } catch (error) {
+      console.log(error);
       if (error.response.data === "this email already exist") {
         return setEmailAlreadyExist(true);
       }
