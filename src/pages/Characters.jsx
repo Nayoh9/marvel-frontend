@@ -14,6 +14,7 @@ const Characters = () => {
   const [limit, setLimit] = useState(100);
   const [skip, setSkip] = useState(0);
   const [searchCharacter, setSearchCharacter] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -39,6 +40,7 @@ const Characters = () => {
   const handleChangeInput = (e) => {
     let value = e.target.value;
     setSkip(0);
+    setCurrentPage(1);
     setSearchParams({ search: value });
     for (let i = 0; i < value.length; i++) {
       // console.log(value[i]);
@@ -75,7 +77,7 @@ const Characters = () => {
                     src={
                       character.thumbnail.extension === "jpg"
                         ? `${character.thumbnail.path}/portrait_xlarge.jpg`
-                        : "./src/assets/images/hero-noavailable.jpeg"
+                        : "https://res.cloudinary.com/dwkwlok28/image/upload/v1703163367/c5d0j21rtliuduc0sddv.jpg"
                     }
                     alt={`super hero ${character.name}`}
                   />
@@ -90,15 +92,17 @@ const Characters = () => {
         <button
           onClick={() => {
             setSkip(skip - limit);
+            setCurrentPage(currentPage - 1);
           }}
           style={{ display: skip > 0 ? "inline" : "none" }}
         >
           Previous page
         </button>
-
+        <span>{currentPage}</span>
         <button
           onClick={() => {
             setSkip(skip + limit);
+            setCurrentPage(currentPage + 1);
             // console.log(skip);
           }}
           style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
