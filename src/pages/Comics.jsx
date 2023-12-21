@@ -75,7 +75,7 @@ const Comics = ({ favorites, setFavorites }) => {
                     src={
                       comic.thumbnail.extension === "jpg"
                         ? `${comic.thumbnail.path}/portrait_xlarge.jpg`
-                        : "./src/assets/images/hero-noavailable.jpeg"
+                        : "https://res.cloudinary.com/dwkwlok28/image/upload/v1703163367/c5d0j21rtliuduc0sddv.jpg"
                     }
                     alt={`picture of the comic ${comic.title}`}
                   />
