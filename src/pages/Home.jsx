@@ -6,13 +6,13 @@ const Home = ({ isConnected, setIsConnected }) => {
     <section className="home">
       <div className="home-buttons">
         <Link to="/characters">
-          <button>Personnages</button>
+          <button>Characters</button>
         </Link>
         <Link to="/comics">
           <button>Comics</button>
         </Link>
         <Link to={isConnected ? "/favorites" : "/signin"}>
-          <button>Favoris</button>
+          <button>Favorites</button>
         </Link>
       </div>
     </section>

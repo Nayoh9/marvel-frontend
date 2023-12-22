@@ -36,22 +36,31 @@ const Favorites = ({ favorites, setFavorites }) => {
   return isLoading ? (
     <p className="loading">Loading page ...</p>
   ) : (
-    <section className="favorites-container">
+    <section className="favorites">
+      <p>Your favorite comics / characters</p>
       {favEmpty && <p>Nothing here please fill your favorites !</p>}
-      {data.map((elem) => {
-        return (
-          <Link
-            to={elem.title ? `/comic/${elem._id}` : `/character/${elem._id}`}
-            key={elem._id}
-          >
-            <article>
-              <img src={`${elem.thumbnail.path}/portrait_xlarge.jpg`} alt="" />
-              <p>{elem.name ? elem.name : elem.title}</p>
-              <p>{elem.description}</p>
+      <section className="favorites-container">
+        {data.map((elem) => {
+          return (
+            <article key={elem._id} className="favorites-article">
+              <Link
+                to={
+                  elem.title ? `/comic/${elem._id}` : `/character/${elem._id}`
+                }
+              >
+                <div>
+                  <img
+                    src={`${elem.thumbnail.path}/portrait_xlarge.jpg`}
+                    alt=""
+                  />
+                  <p>{elem.name ? elem.name : elem.title}</p>
+                  <p>{elem.description}</p>
+                </div>
+              </Link>
             </article>
-          </Link>
-        );
-      })}
+          );
+        })}
+      </section>
     </section>
   );
 };

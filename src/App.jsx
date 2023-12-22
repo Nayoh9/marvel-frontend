@@ -7,6 +7,7 @@ import { useState } from "react";
 
 // Components import
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // Pages import
 import Characters from "./pages/Characters";
@@ -70,6 +71,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
     </Router>
   );
 }

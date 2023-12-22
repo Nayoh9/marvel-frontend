@@ -65,6 +65,7 @@ const Characters = () => {
           return (
             <article key={character._id}>
               <Link
+                className="redirects"
                 to={
                   Cookies.get("token_marvel")
                     ? `/character/${character._id}`

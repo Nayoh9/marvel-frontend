@@ -65,13 +65,14 @@ const Comics = ({ favorites, setFavorites }) => {
           return (
             <article key={comic._id}>
               <Link
+                className="redirects"
                 to={
                   Cookies.get("token_marvel")
                     ? `/comic/${comic._id}`
                     : "/signin"
                 }
               >
-                <div className="comic">
+                <div>
                   <img
                     src={
                       comic.thumbnail.extension === "jpg"
