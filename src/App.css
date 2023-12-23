@@ -3,6 +3,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--second-bcg-color);
+}
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
@@ -32,9 +36,9 @@ a {
 :root {
   --main-font-color: white;
   --main-bcg-color: #000000;
-  --second-bcg-color: #1a1b1d;
+  --second-bcg-color: #0d1e49;
   --main-font-family: "Abel", sans-serif;
-  --main-font-size: 2.5em;
+  --main-font-size: 2em;
 }
 
 /*--------------- Style of header -----------*/
@@ -44,10 +48,11 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  height: 100px;
+  height: 80px;
+
   background-color: var(--second-bcg-color);
   font-family: var(--main-font-family);
-  font-size: 2em;
+  font-size: var(--main-font-size);
 }
 
 #anchor {
@@ -82,9 +87,14 @@ header > a {
 /*---------- Style of CharacterS page -----------*/
 
 .characters {
-  background-color: var(--main-bcg-color);
+  background: rgb(236, 28, 34);
+  background: linear-gradient(
+    260deg,
+    rgba(236, 28, 34, 1) 0%,
+    rgba(2, 2, 19, 1) 35%,
+    rgba(13, 30, 73, 1) 80%
+  );
   min-height: 100vh;
-  width: 100vw;
 }
 
 .characters-container {
@@ -191,8 +201,10 @@ a div img {
 }
 
 .character-content {
-  height: calc(100vh - 180px);
-  background-color: grey;
+  height: calc(100vh - 160px);
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1703355071/herofight_mpov7d.jpg);
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,7 +213,12 @@ a div img {
 /*------------ Style of ComicS page ------------*/
 
 .comics {
-  background-color: var(--main-bcg-color);
+  background: linear-gradient(
+    260deg,
+    rgba(236, 28, 34, 1) 0%,
+    rgba(2, 2, 19, 1) 35%,
+    rgba(13, 30, 73, 1) 80%
+  );
   min-height: 100vh;
 }
 
@@ -264,14 +281,14 @@ a div img {
 }
 
 .comic-content {
-  height: calc(100vh - 180px);
+  height: calc(100vh - 160px);
   background-color: grey;
 }
 
 /*------------- Style of favorites page  --------------*/
 .favorites {
   background-color: var(--main-bcg-color);
-  height: calc(100vh - 180px);
+  height: calc(100vh - 160px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -306,13 +323,14 @@ a div img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 160px);
+  width: auto;
 }
 
 .home-buttons {
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 300px;
 }
 
 .home-buttons > a > button {
@@ -324,6 +342,7 @@ a div img {
   border: none;
   color: var(--main-font-color);
   background-color: var(--main-bcg-color);
+  background: none;
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   z-index: 1;
@@ -353,7 +372,7 @@ a div img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 160px);
 }
 
 .signup {
@@ -386,7 +405,7 @@ form > input {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 160px);
 }
 
 .signin {
@@ -417,6 +436,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background-color: var(--second-bcg-color);
   height: 80px;
 }

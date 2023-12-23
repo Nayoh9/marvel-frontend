@@ -57,7 +57,12 @@ const Comics = ({ favorites, setFavorites }) => {
   ) : (
     <section className="comics">
       <div className="input">
-        <input type="text" onChange={handleChangeInput} />
+        <input
+          type="text"
+          onChange={handleChangeInput}
+          placeholder="search for a comic..
+"
+        />
       </div>
 
       <div className="comics-container">

@@ -58,7 +58,12 @@ const Characters = () => {
   ) : (
     <section className="characters">
       <div className="input">
-        <input type="text" onChange={handleChangeInput} />
+        <input
+          type="text"
+          onChange={handleChangeInput}
+          placeholder="Search for a hero..
+"
+        />
       </div>
       <div className="characters-container">
         {data.results.map((character) => {
@@ -95,7 +100,10 @@ const Characters = () => {
           onClick={() => {
             setSkip(skip - limit);
             setCurrentPage(currentPage - 1);
-            setSearchParams({ search: searchCharacter, page: currentPage - 1 });
+            setSearchParams({
+              search: searchCharacter,
+              page: currentPage - 1,
+            });
           }}
           style={{ display: skip > 0 ? "inline" : "none" }}
         >
@@ -108,7 +116,10 @@ const Characters = () => {
           onClick={() => {
             setSkip(skip + limit);
             setCurrentPage(currentPage + 1);
-            setSearchParams({ search: searchCharacter, page: currentPage + 1 });
+            setSearchParams({
+              search: searchCharacter,
+              page: currentPage + 1,
+            });
             // console.log(skip);
           }}
           style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
