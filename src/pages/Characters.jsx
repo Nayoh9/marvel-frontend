@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
 const Characters = () => {
+  window.scrollTo(0, 0);
   const [isLoading, setIsloading] = useState(true);
   const [data, setData] = useState({});
 
@@ -29,6 +30,7 @@ const Characters = () => {
         // console.log(response.data);
         setData(response.data);
         setIsloading(false);
+        window.scrollTo(0, 0);
       };
       fetchData();
     } catch (error) {
@@ -97,7 +99,7 @@ const Characters = () => {
           }}
           style={{ display: skip > 0 ? "inline" : "none" }}
         >
-          <a href="#header">Previous page</a>
+          <a href="#anchor">Previous page</a>
         </button>
         <span style={{ display: skip >= data.count - 100 ? "none" : "inline" }}>
           {currentPage}
@@ -111,7 +113,7 @@ const Characters = () => {
           }}
           style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
         >
-          <a href="#header">Next page</a>
+          <a href="#anchor">Next page</a>
         </button>
       </div>
     </section>

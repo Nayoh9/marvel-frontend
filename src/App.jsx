@@ -8,6 +8,7 @@ import { useState } from "react";
 // Components import
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Headroom from "react-headroom";
 
 // Pages import
 import Characters from "./pages/Characters";
@@ -25,7 +26,10 @@ function App() {
 
   return (
     <Router>
-      <Header isConnected={isConnected} setIsConnected={setIsConnected} />
+      <div id="anchor"></div>
+      <Headroom>
+        <Header isConnected={isConnected} setIsConnected={setIsConnected} />
+      </Headroom>
       <Routes>
         <Route
           path={"/"}

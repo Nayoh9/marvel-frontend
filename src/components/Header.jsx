@@ -11,7 +11,8 @@ const Header = ({ setIsConnected, isConnected }) => {
   }, [isConnected]);
 
   return (
-    <header id="header">
+    <header>
+      <div id="anchor"></div>
       <Link to={"/"}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Marvel_Logo.svg"
@@ -21,7 +22,12 @@ const Header = ({ setIsConnected, isConnected }) => {
       </Link>
 
       <ul>
-        <Link to={"/characters"}>
+        <Link
+          to={"/characters"}
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
           <li>Characters</li>
         </Link>
 

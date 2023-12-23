@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
 const Comics = ({ favorites, setFavorites }) => {
+  window.scrollTo(0, 0);
   const [data, setData] = useState();
   const [isLoading, setIsloading] = useState(true);
 
@@ -99,7 +100,7 @@ const Comics = ({ favorites, setFavorites }) => {
           }}
           style={{ display: skip === 0 ? "none" : "inline" }}
         >
-          <a href="#header">Previous page</a>
+          <a href="#anchor">Previous page</a>
         </button>
         <span style={{ display: skip >= data.count - 100 ? "none" : "inline" }}>
           {currentPage}
@@ -114,7 +115,7 @@ const Comics = ({ favorites, setFavorites }) => {
           }}
           style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
         >
-          <a href="#header">Next page</a>
+          <a href="#anchor">Next page</a>
         </button>
       </div>
     </section>
