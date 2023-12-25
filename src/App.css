@@ -49,7 +49,6 @@ header {
   justify-content: space-between;
   width: 100vw;
   height: 80px;
-
   background-color: var(--second-bcg-color);
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
@@ -87,13 +86,18 @@ header > a {
 /*---------- Style of CharacterS page -----------*/
 
 .characters {
-  background: rgb(236, 28, 34);
+  /* background: rgb(236, 28, 34);
   background: linear-gradient(
     260deg,
     rgba(236, 28, 34, 1) 0%,
     rgba(2, 2, 19, 1) 35%,
     rgba(13, 30, 73, 1) 80%
-  );
+  ); */
+  background-image: url(./assets/images/spider-man.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
 }
 
@@ -118,13 +122,12 @@ header > a {
 a div img {
   width: 150px;
   height: 225px;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .redirects > div {
   height: 350px;
   position: relative;
-  border-radius: 10px 10px 0px 0px;
   overflow: hidden;
   color: var(--main-font-color);
 }
@@ -202,7 +205,7 @@ a div img {
 
 .character-content {
   height: calc(100vh - 160px);
-  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1703355071/herofight_mpov7d.jpg);
+  background: url(./assets/images/herofight.jpeg);
   background-position: center;
   background-size: cover;
   display: flex;
@@ -319,7 +322,7 @@ a div img {
 /*------------- Style of home page  --------------*/
 
 .home {
-  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1703340916/home-marvel-background_m9pth0.jpg);
+  background: url(./assets/images/home-marvel-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
