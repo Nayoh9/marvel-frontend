@@ -4,11 +4,11 @@ import "./App.css";
 // Package import
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import Headroom from "react-headroom";
 
 // Components import
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Headroom from "react-headroom";
 
 // Pages import
 import Characters from "./pages/Characters";

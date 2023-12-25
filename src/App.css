@@ -54,12 +54,6 @@ header {
   font-size: var(--main-font-size);
 }
 
-#anchor {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-}
-
 header > ul {
   display: flex;
   margin-right: 5%;
@@ -80,19 +74,14 @@ header > a {
 
 .logo-marvel {
   width: 150px;
+  height: 100%;
+
   border-radius: 3px;
 }
 
 /*---------- Style of CharacterS page -----------*/
 
 .characters {
-  /* background: rgb(236, 28, 34);
-  background: linear-gradient(
-    260deg,
-    rgba(236, 28, 34, 1) 0%,
-    rgba(2, 2, 19, 1) 35%,
-    rgba(13, 30, 73, 1) 80%
-  ); */
   background-image: url(./assets/images/spider-man.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -155,11 +144,13 @@ a div img {
 
 .input input {
   height: 30px;
-  width: 15%;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 15%;
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
-  border: none;
+  border: 2px solid var(--second-bcg-color);
 }
 
 .characters-button  {
@@ -246,15 +237,6 @@ a div img {
 .input {
   display: flex;
   justify-content: center;
-}
-
-.input input {
-  height: 30px;
-  width: 15%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  border: none;
 }
 
 .comics-button  {
@@ -446,4 +428,16 @@ footer {
 
 footer p {
   color: white;
+}
+
+/* MEDIA QUERIES  */
+
+@media all and (max-width: 690px) {
+  .characters input {
+    background-color: red;
+  }
+
+  header a {
+    font-size: 0.7em;
+  }
 }

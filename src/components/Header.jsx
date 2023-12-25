@@ -3,6 +3,9 @@ import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+// Component import
+import Navbar from "./Navbar";
+
 const Header = ({ setIsConnected, isConnected }) => {
   useEffect(() => {
     if (Cookies.get("token_marvel")) {
@@ -12,7 +15,6 @@ const Header = ({ setIsConnected, isConnected }) => {
 
   return (
     <header>
-      <div id="anchor"></div>
       <Link to={"/"}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Marvel_Logo.svg"
@@ -21,38 +23,7 @@ const Header = ({ setIsConnected, isConnected }) => {
         />
       </Link>
 
-      <ul>
-        <Link
-          to={"/characters"}
-          onClick={() => {
-            window.scrollTo(0, 0);
-          }}
-        >
-          <li>Characters</li>
-        </Link>
-
-        <Link to={"/comics"}>
-          <li>Comics</li>
-        </Link>
-
-        <Link to={isConnected ? "/favorites" : "/signin"}>
-          <li>Favorites</li>
-        </Link>
-
-        {isConnected ? (
-          <Link
-            to={"/"}
-            onClick={() => {
-              Cookies.remove("token_marvel");
-              setIsConnected(false);
-            }}
-          >
-            Sign out
-          </Link>
-        ) : (
-          ""
-        )}
-      </ul>
+      <Navbar isConnected={isConnected} setIsConnected={setIsConnected} />
     </header>
   );
 };
