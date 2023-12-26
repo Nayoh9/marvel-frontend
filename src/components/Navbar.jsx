@@ -2,23 +2,38 @@
 import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ isConnected, setIsConnected }) => {
+const Navbar = ({
+  isConnected,
+  setIsConnected,
+  isHamburgerClicked,
+  setIsHamburgerClicked,
+}) => {
   return (
-    <ul>
+    <ul className={isHamburgerClicked ? "navbar mobile-menu" : "navbar"}>
       <Link
         to={"/characters"}
         onClick={() => {
-          window.scrollTo(0, 0);
+          setIsHamburgerClicked(false);
         }}
       >
         <li>Characters</li>
       </Link>
 
-      <Link to={"/comics"}>
+      <Link
+        to={"/comics"}
+        onClick={() => {
+          setIsHamburgerClicked(false);
+        }}
+      >
         <li>Comics</li>
       </Link>
 
-      <Link to={isConnected ? "/favorites" : "/signin"}>
+      <Link
+        to={isConnected ? "/favorites" : "/signin"}
+        onClick={() => {
+          setIsHamburgerClicked(false);
+        }}
+      >
         <li>Favorites</li>
       </Link>
 
@@ -28,6 +43,7 @@ const Navbar = ({ isConnected, setIsConnected }) => {
           onClick={() => {
             Cookies.remove("token_marvel");
             setIsConnected(false);
+            setIsHamburgerClicked(false);
           }}
         >
           Sign out

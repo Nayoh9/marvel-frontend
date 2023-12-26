@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 const Home = ({ isConnected, setIsConnected }) => {
   return (
     <section className="home">
+      <div className="home-title">
+        <h1>BIENVENUE SUR MARVEL</h1>
+      </div>
       <div className="home-buttons">
         <Link to="/signin">
-          <button>Sign in</button>
+          <p>Sign in</p>
         </Link>
         <Link to="/signup">
-          <button>Sign up</button>
+          <p>Sign up</p>
         </Link>
         {/* <Link to={isConnected ? "/favorites" : "/signin"}>
           <button>Favorites</button>

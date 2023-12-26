@@ -2,11 +2,15 @@
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Component import
 import Navbar from "./Navbar";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ setIsConnected, isConnected }) => {
+  const [isHamburgerClicked, setIsHamburgerClicked] = useState(false);
+
   useEffect(() => {
     if (Cookies.get("token_marvel")) {
       setIsConnected(true);
@@ -23,7 +27,25 @@ const Header = ({ setIsConnected, isConnected }) => {
         />
       </Link>
 
-      <Navbar isConnected={isConnected} setIsConnected={setIsConnected} />
+      <Navbar
+        isConnected={isConnected}
+        setIsConnected={setIsConnected}
+        isHamburgerClicked={isHamburgerClicked}
+        setIsHamburgerClicked={setIsHamburgerClicked}
+      />
+
+      <FontAwesomeIcon
+        icon="fa-solid fa-bars"
+        className="hamburger-menu"
+        style={{ color: "#ffffff" }}
+        onClick={() => {
+          if (!isHamburgerClicked) {
+            setIsHamburgerClicked(true);
+          } else {
+            setIsHamburgerClicked(false);
+          }
+        }}
+      />
     </header>
   );
 };

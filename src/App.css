@@ -1,7 +1,7 @@
 /*--------------- General settings ---------------*/
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 body {
   background-color: var(--second-bcg-color);
@@ -24,6 +24,10 @@ p {
 }
 
 a {
+  font-family: var(--main-font-family);
+}
+
+h1 {
   font-family: var(--main-font-family);
 }
 
@@ -54,17 +58,17 @@ header {
   font-size: var(--main-font-size);
 }
 
-header > ul {
+.navbar {
   display: flex;
   margin-right: 5%;
 }
 
-header > ul > a {
+header a {
   color: var(--main-font-color);
   padding-left: 10px;
 }
 
-header > ul > a:nth-child(1) {
+header a:nth-child(1) {
   padding: 0;
 }
 
@@ -74,9 +78,16 @@ header > a {
 
 .logo-marvel {
   width: 150px;
-  height: 100%;
-
   border-radius: 3px;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.navbar.mobile-menu {
+  margin-left: 0%;
+  backdrop-filter: blur(5px);
 }
 
 /*---------- Style of CharacterS page -----------*/
@@ -87,7 +98,7 @@ header > a {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
 }
 
 .characters-container {
@@ -304,6 +315,11 @@ a div img {
 /*------------- Style of home page  --------------*/
 
 .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
   background: url(./assets/images/home-marvel-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -314,14 +330,13 @@ a div img {
 
 .home-buttons {
   display: flex;
-  justify-content: center;
-  padding-top: 300px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.home-buttons > a > button {
+.home-buttons > a > p {
   position: relative;
-  margin: 10px;
-  width: 200px;
+  margin: 0 10px;
   height: 70px;
   border-radius: 10px;
   border: none;
@@ -330,27 +345,14 @@ a div img {
   background: none;
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
-  z-index: 1;
 }
 
-.home-buttons > a > button::before {
-  content: "";
+.home-title {
   position: absolute;
-  top: 0px;
-  left: 0%;
-  width: 100%;
-  height: 0%;
-  border-radius: 10px;
-  z-index: 1;
-  background-color: #ec1c22;
+  top: 14%;
+  font-size: var(--main-font-size);
+  color: white;
 }
-
-.home-buttons > a > button:hover::before {
-  height: 100%;
-  z-index: -1;
-  transition: height 100ms ease-in-out;
-}
-
 /*------------- Style of signup page  --------------*/
 
 .signup-container {
@@ -433,11 +435,30 @@ footer p {
 /* MEDIA QUERIES  */
 
 @media all and (max-width: 690px) {
-  .characters input {
-    background-color: red;
+  .hamburger-menu {
+    display: block;
+    margin-right: 5%;
+    z-index: 1;
   }
 
-  header a {
-    font-size: 0.7em;
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin: 0;
+    margin-left: -100%;
+    font-size: 30px;
+    background-color: RGBA(13, 30, 73, 0.61);
+  }
+
+  .navbar a {
+    margin: 25px 0;
+    padding: 0;
   }
 }
