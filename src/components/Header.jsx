@@ -6,7 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Component import
 import Navbar from "./Navbar";
-import { faL } from "@fortawesome/free-solid-svg-icons";
+
+//Utils functions
+import { disableScroll, enableScroll } from "../utils/scroll";
 
 const Header = ({ setIsConnected, isConnected }) => {
   const [isHamburgerClicked, setIsHamburgerClicked] = useState(false);
@@ -21,7 +23,7 @@ const Header = ({ setIsConnected, isConnected }) => {
     <header>
       <Link to={"/"}>
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Marvel_Logo.svg"
+          src="src/assets/images/marvel-logo.svg"
           alt="Marvel écrit en blanc sur font rouge"
           className="logo-marvel"
         />
@@ -33,19 +35,35 @@ const Header = ({ setIsConnected, isConnected }) => {
         isHamburgerClicked={isHamburgerClicked}
         setIsHamburgerClicked={setIsHamburgerClicked}
       />
-
-      <FontAwesomeIcon
-        icon="fa-solid fa-bars"
-        className="hamburger-menu"
-        style={{ color: "#ffffff" }}
-        onClick={() => {
-          if (!isHamburgerClicked) {
-            setIsHamburgerClicked(true);
-          } else {
-            setIsHamburgerClicked(false);
-          }
-        }}
-      />
+      {!isHamburgerClicked ? (
+        <FontAwesomeIcon
+          icon="fa-solid fa-bars"
+          className="hamburger-menu"
+          onClick={() => {
+            if (!isHamburgerClicked) {
+              setIsHamburgerClicked(true);
+              disableScroll();
+            } else {
+              setIsHamburgerClicked(false);
+              enableScroll();
+            }
+          }}
+        />
+      ) : (
+        <FontAwesomeIcon
+          icon="fa-solid fa-xmark"
+          className="hamburger-menu"
+          onClick={() => {
+            if (!isHamburgerClicked) {
+              setIsHamburgerClicked(true);
+              disableScroll();
+            } else {
+              setIsHamburgerClicked(false);
+              enableScroll();
+            }
+          }}
+        />
+      )}
     </header>
   );
 };

@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Headroom from "react-headroom";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 // Components import
 import Header from "./components/Header";
@@ -22,7 +22,7 @@ import Favorites from "./pages/Favorites";
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
 
-library.add(faBars);
+library.add(faBars, faXmark);
 
 function App() {
   const [favorites, setFavorites] = useState([]);

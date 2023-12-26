@@ -2,6 +2,9 @@
 import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 
+//Utils functions
+import { disableScroll, enableScroll } from "../utils/scroll";
+
 const Navbar = ({
   isConnected,
   setIsConnected,
@@ -14,6 +17,7 @@ const Navbar = ({
         to={"/characters"}
         onClick={() => {
           setIsHamburgerClicked(false);
+          enableScroll();
         }}
       >
         <li>Characters</li>
@@ -23,6 +27,7 @@ const Navbar = ({
         to={"/comics"}
         onClick={() => {
           setIsHamburgerClicked(false);
+          enableScroll();
         }}
       >
         <li>Comics</li>
@@ -32,6 +37,7 @@ const Navbar = ({
         to={isConnected ? "/favorites" : "/signin"}
         onClick={() => {
           setIsHamburgerClicked(false);
+          enableScroll();
         }}
       >
         <li>Favorites</li>
@@ -44,6 +50,7 @@ const Navbar = ({
             Cookies.remove("token_marvel");
             setIsConnected(false);
             setIsHamburgerClicked(false);
+            enableScroll();
           }}
         >
           Sign out

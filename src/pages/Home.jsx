@@ -5,18 +5,15 @@ const Home = ({ isConnected, setIsConnected }) => {
   return (
     <section className="home">
       <div className="home-title">
-        <h1>BIENVENUE SUR MARVEL</h1>
+        <h1>Welcome to Marvel Universe </h1>
       </div>
       <div className="home-buttons">
-        <Link to="/signin">
+        <Link to={isConnected ? "/characters" : "/signin"}>
           <p>Sign in</p>
         </Link>
-        <Link to="/signup">
+        <Link to={isConnected ? "/characters" : "/signup"}>
           <p>Sign up</p>
         </Link>
-        {/* <Link to={isConnected ? "/favorites" : "/signin"}>
-          <button>Favorites</button>
-        </Link> */}
       </div>
     </section>
   );

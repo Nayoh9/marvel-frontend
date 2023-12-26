@@ -36,7 +36,7 @@ const Comics = ({ favorites, setFavorites }) => {
     }
   }, [skip, searchComic]);
 
-  console.log(data);
+  // console.log(data);
 
   const handleChangeInput = (e) => {
     let value = e.target.value;

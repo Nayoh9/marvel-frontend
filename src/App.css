@@ -19,15 +19,10 @@ body {
   font-family: var(--main-font-family);
 }
 
-p {
-  font-family: var(--main-font-family);
-}
-
-a {
-  font-family: var(--main-font-family);
-}
-
-h1 {
+p,
+a,
+h1,
+h2 {
   font-family: var(--main-font-family);
 }
 
@@ -63,13 +58,10 @@ header {
   margin-right: 5%;
 }
 
-header a {
+.navbar a {
+  border-left: solid 1px white;
   color: var(--main-font-color);
-  padding-left: 10px;
-}
-
-header a:nth-child(1) {
-  padding: 0;
+  padding: 0 20px;
 }
 
 header > a {
@@ -83,11 +75,60 @@ header > a {
 
 .hamburger-menu {
   display: none;
+  color: white;
 }
 
 .navbar.mobile-menu {
   margin-left: 0%;
   backdrop-filter: blur(5px);
+}
+
+/*------------- Style of home page  --------------*/
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background: url(./assets/images/home-marvel-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: calc(100vh - 160px);
+  width: auto;
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-buttons > a > p {
+  position: relative;
+  margin: 0 10px;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  color: var(--main-font-color);
+  background-color: var(--main-bcg-color);
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+  border: 3px solid var(--second-bcg-color);
+  background-color: #ec1c22;
+}
+
+.home-title {
+  position: absolute;
+  top: 15%;
+  font-size: 3rem;
+  padding: 10px;
+  color: white;
+  border: 5px solid var(--second-bcg-color);
+  background-color: #ec1c22;
+  border-radius: 0px 40px 0px 40px;
 }
 
 /*---------- Style of CharacterS page -----------*/
@@ -312,47 +353,6 @@ a div img {
   color: white;
 }
 
-/*------------- Style of home page  --------------*/
-
-.home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  background: url(./assets/images/home-marvel-background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: calc(100vh - 160px);
-  width: auto;
-}
-
-.home-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.home-buttons > a > p {
-  position: relative;
-  margin: 0 10px;
-  height: 70px;
-  border-radius: 10px;
-  border: none;
-  color: var(--main-font-color);
-  background-color: var(--main-bcg-color);
-  background: none;
-  font-family: var(--main-font-family);
-  font-size: var(--main-font-size);
-}
-
-.home-title {
-  position: absolute;
-  top: 14%;
-  font-size: var(--main-font-size);
-  color: white;
-}
 /*------------- Style of signup page  --------------*/
 
 .signup-container {
@@ -425,16 +425,24 @@ footer {
   align-items: center;
   flex-direction: column;
   background-color: var(--second-bcg-color);
-  height: 80px;
+  /* height: 80px; */
 }
 
-footer p {
+footer h2 {
   color: white;
+}
+
+.linkedin,
+.github {
+  width: 30px;
+  height: 30px;
 }
 
 /* MEDIA QUERIES  */
 
 @media all and (max-width: 690px) {
+  /* --------------   Queries for HEADER --------------   */
+
   .hamburger-menu {
     display: block;
     margin-right: 5%;
@@ -455,10 +463,19 @@ footer p {
     margin-left: -100%;
     font-size: 30px;
     background-color: RGBA(13, 30, 73, 0.61);
+    transition: all 0.5s ease;
   }
 
   .navbar a {
     margin: 25px 0;
+    border: none;
     padding: 0;
+  }
+
+  /* --------------   Queries for HOME --------------   */
+
+  .home-title h1 {
+    font-size: 30px;
+    text-align: center;
   }
 }
