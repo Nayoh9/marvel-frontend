@@ -115,11 +115,11 @@ const Comic = ({ favorites, setFavorites }) => {
           <img src={`${data.thumbnail.path}/portrait_xlarge.jpg`} />
           <p>{data.description}</p>
           {!isClicked ? (
-            <button onClick={handleAddToFavorites}>
+            <button onClick={handleAddToFavorites} className="add">
               Add this comic to your favorites
             </button>
           ) : (
-            <button onClick={handleRemoveFromFavorites}>
+            <button onClick={handleRemoveFromFavorites} className="remove">
               Remove this comic from your favorites
             </button>
           )}

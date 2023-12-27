@@ -5,6 +5,7 @@
 
 body {
   background-color: var(--second-bcg-color);
+  min-height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -88,16 +89,13 @@ header > a {
 
 .home {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
   background: url(./assets/images/home-marvel-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: calc(100vh - 180px);
-  width: auto;
+  min-height: calc(100vh - 180px);
 }
 
 .home-buttons {
@@ -122,14 +120,21 @@ header > a {
 }
 
 .home-title {
-  position: absolute;
-  top: 15%;
   font-size: 3rem;
   padding: 10px;
   color: white;
   border: 5px solid var(--second-bcg-color);
   background-color: #ec1c22;
   border-radius: 0px 40px 0px 40px;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  justify-content: space-around;
+  height: 350px;
 }
 
 /*---------- Style of CharacterS page -----------*/
@@ -226,6 +231,7 @@ a div img {
   flex-direction: column;
   align-items: center;
   height: calc(100vh - 180px);
+  padding: 10px 0px;
   background: url(./assets/images/herofight.jpeg);
   background-position: center;
   background-size: cover;
@@ -236,7 +242,7 @@ a div img {
   justify-content: center;
   max-width: 300px;
   padding: 10px;
-  margin-bottom: 5vh;
+  margin-bottom: 5px;
   background-color: var(--second-bcg-color);
   box-shadow: 0px -8px 39px 0px rgba(0, 0, 0, 0.67) inset;
   -webkit-box-shadow: 0px -8px 39px 0px rgba(0, 0, 0, 0.67) inset;
@@ -263,13 +269,25 @@ a div img {
 
 .character-comics {
   display: flex;
-  width: auto;
   max-width: 80%;
-  overflow-y: scroll;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .single-comic {
   padding: 0 10px;
+}
+
+.add {
+  background-color: #ec1c22;
+  border: none;
+  color: white;
+}
+
+.remove {
+  background-color: blue;
+  border: none;
 }
 
 /*------------ Style of ComicS page ------------*/
@@ -447,7 +465,8 @@ footer {
 footer h2 {
   color: white;
   font-size: var(--main-font-size);
-  margin-bottom: 10px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 footer img {
@@ -505,7 +524,7 @@ footer img {
   /* --------------   Queries for CHARACTER --------------   */
 
   .character img {
-    width: 40%;
+    width: 50%;
   }
 
   .character-container {
@@ -520,5 +539,9 @@ footer img {
 
   .character-comics img {
     width: 70px;
+  }
+
+  .character p {
+    margin: 5px 0;
   }
 }

@@ -120,15 +120,15 @@ const Character = ({ favorites, setFavorites }) => {
     <section className="character-content">
       <section className="character-container">
         <article className="character">
-          <p>{data.name}</p>
+          <p className="character-name">{data.name}</p>
           <img src={`${data.thumbnail.path}/portrait_xlarge.jpg`} />
           <p className="character-description">{data.description}</p>
           {!isClicked ? (
-            <button onClick={handleAddToFavorites}>
+            <button onClick={handleAddToFavorites} className="add">
               Add this hero to your favorites
             </button>
           ) : (
-            <button onClick={handleRemoveFromFavorites}>
+            <button onClick={handleRemoveFromFavorites} className="remove">
               Remove this hero from your favorites
             </button>
           )}
