@@ -95,7 +95,7 @@ header > a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 180px);
   width: auto;
 }
 
@@ -139,7 +139,7 @@ header > a {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
 }
 
 .characters-container {
@@ -247,7 +247,7 @@ a div img {
 }
 
 .character-content {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 180px);
   background: url(./assets/images/herofight.jpeg);
   background-position: center;
   background-size: cover;
@@ -318,14 +318,14 @@ a div img {
 }
 
 .comic-content {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 180px);
   background-color: grey;
 }
 
 /*------------- Style of favorites page  --------------*/
 .favorites {
   background-color: var(--main-bcg-color);
-  height: calc(100vh - 160px);
+  height: calc(100vh - 180px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,7 +359,7 @@ a div img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 180px);
 }
 
 .signup {
@@ -392,7 +392,7 @@ form > input {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 180px);
 }
 
 .signin {
@@ -425,17 +425,24 @@ footer {
   align-items: center;
   flex-direction: column;
   background-color: var(--second-bcg-color);
-  /* height: 80px; */
+  height: 100px;
 }
 
 footer h2 {
   color: white;
+  font-size: var(--main-font-size);
+  margin-bottom: 10px;
 }
 
-.linkedin,
-.github {
-  width: 30px;
-  height: 30px;
+footer img {
+  width: 40px;
+  height: 40px;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-around;
+  width: 100px;
 }
 
 /* MEDIA QUERIES  */

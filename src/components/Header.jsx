@@ -23,7 +23,7 @@ const Header = ({ setIsConnected, isConnected }) => {
     <header>
       <Link to={"/"}>
         <img
-          src="src/assets/images/marvel-logo.svg"
+          src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703682526/marvel-logo_pgsubf.svg"
           alt="Marvel écrit en blanc sur font rouge"
           className="logo-marvel"
         />
@@ -35,6 +35,7 @@ const Header = ({ setIsConnected, isConnected }) => {
         isHamburgerClicked={isHamburgerClicked}
         setIsHamburgerClicked={setIsHamburgerClicked}
       />
+
       {!isHamburgerClicked ? (
         <FontAwesomeIcon
           icon="fa-solid fa-bars"
