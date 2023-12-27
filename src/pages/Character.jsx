@@ -122,7 +122,7 @@ const Character = ({ favorites, setFavorites }) => {
         <article className="character">
           <p>{data.name}</p>
           <img src={`${data.thumbnail.path}/portrait_xlarge.jpg`} />
-          <p>{data.description}</p>
+          <p className="character-description">{data.description}</p>
           {!isClicked ? (
             <button onClick={handleAddToFavorites}>
               Add this hero to your favorites
@@ -132,14 +132,14 @@ const Character = ({ favorites, setFavorites }) => {
               Remove this hero from your favorites
             </button>
           )}
-          <p>You can find this hero in the following comics :</p>
+          <p>You can find this hero in the comics below.</p>
         </article>
       </section>
 
       <section className="character-comics">
         {data.comics.map((comic) => {
           return (
-            <article key={comic.title}>
+            <article className="single-comic" key={comic.title}>
               <img
                 src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
                 alt={`comic ${comic.title}`}

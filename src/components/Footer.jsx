@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <h2>Made by ANDRE Yohann</h2>
+      <h2>Made by Yohann ANDRE</h2>
 
       <div className="socials">
         <a href="https://www.linkedin.com/in/yohann-andr%C3%A9/">

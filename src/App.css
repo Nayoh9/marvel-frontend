@@ -24,6 +24,7 @@ a,
 h1,
 h2 {
   font-family: var(--main-font-family);
+  color: white;
 }
 
 /*-------------- Font  ----------------*/
@@ -219,20 +220,45 @@ a div img {
 
 /*------------ Style of Character page -------------*/
 
+.character-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 180px);
+  background: url(./assets/images/herofight.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
 .character-container {
   display: flex;
   justify-content: center;
+  max-width: 300px;
+  padding: 10px;
+  margin-bottom: 5vh;
+  background-color: var(--second-bcg-color);
+  box-shadow: 0px -8px 39px 0px rgba(0, 0, 0, 0.67) inset;
+  -webkit-box-shadow: 0px -8px 39px 0px rgba(0, 0, 0, 0.67) inset;
+  -moz-box-shadow: 0px -8px 39px 0px rgba(0, 0, 0, 0.67) inset;
+  border: 5px solid var(--second-bcg-color);
+  border-radius: 40px;
 }
 
 .character {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
 }
 
 .character img {
-  width: 150px;
+  width: 50%;
+  border-radius: 20px;
+}
+
+.character p {
+  margin: 10px 0;
+  text-align: center;
 }
 
 .character-comics {
@@ -242,18 +268,8 @@ a div img {
   overflow-y: scroll;
 }
 
-.character-comics > article {
-  padding: 10px;
-}
-
-.character-content {
-  height: calc(100vh - 180px);
-  background: url(./assets/images/herofight.jpeg);
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.single-comic {
+  padding: 0 10px;
 }
 
 /*------------ Style of ComicS page ------------*/
@@ -484,5 +500,25 @@ footer img {
   .home-title h1 {
     font-size: 30px;
     text-align: center;
+  }
+
+  /* --------------   Queries for CHARACTER --------------   */
+
+  .character img {
+    width: 40%;
+  }
+
+  .character-container {
+    width: 200px;
+    height: 300px;
+  }
+
+  .character-description {
+    height: 40px;
+    overflow-y: scroll;
+  }
+
+  .character-comics img {
+    width: 70px;
   }
 }
