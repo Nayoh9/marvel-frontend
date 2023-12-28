@@ -100,17 +100,18 @@ header > a {
 
 .home-buttons {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .home-buttons > a > p {
   position: relative;
-  margin: 0 10px;
-  padding: 5px;
+  margin: 0 15px;
   margin-top: 10px;
   border-radius: 10px;
   border: none;
+  padding: 5px;
+  text-align: center;
   color: var(--main-font-color);
   background-color: var(--main-bcg-color);
   font-family: var(--main-font-family);
@@ -131,8 +132,7 @@ header > a {
 .home-content {
   display: flex;
   flex-direction: column;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin: 200px 0;
   justify-content: space-around;
   height: 350px;
 }
@@ -270,13 +270,20 @@ a div img {
 .character-comics {
   display: flex;
   max-width: 80%;
-
   overflow-x: scroll;
   overflow-y: hidden;
 }
 
 .single-comic {
   padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-comic p {
+  /* background-color: var(--second-bcg-color); */
+  padding-top: 0;
+  font-weight: bold;
 }
 
 .add {
@@ -516,6 +523,10 @@ footer img {
 
   /* --------------   Queries for HOME --------------   */
 
+  .home-content {
+    margin: auto 0;
+  }
+
   .home-title h1 {
     font-size: 30px;
     text-align: center;
@@ -543,5 +554,11 @@ footer img {
 
   .character p {
     margin: 5px 0;
+  }
+
+  /* --------------   Queries for CHARACTER --------------   */
+
+  footer h2 {
+    font-size: 20px;
   }
 }

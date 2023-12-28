@@ -24,6 +24,8 @@ const Character = ({ favorites, setFavorites }) => {
         setData(response.data);
         setIsloading(false);
 
+        console.log(response.data);
+
         // DB fav_list informations of the user
         const secondResponse = await axios.get(`${baseAPI}/user/find`, {
           headers: {
@@ -144,6 +146,8 @@ const Character = ({ favorites, setFavorites }) => {
                 src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
                 alt={`comic ${comic.title}`}
               />
+
+              <p>{comic.title}</p>
             </article>
           );
         })}
