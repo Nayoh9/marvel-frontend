@@ -1,6 +1,9 @@
 // Dynamic adress
 import baseAPI from "../utils/api";
 
+// Component import
+import Footer from "../components/Footer";
+
 // Package import
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
@@ -61,6 +64,7 @@ const Favorites = ({ favorites, setFavorites }) => {
           );
         })}
       </section>
+      <Footer />
     </section>
   );
 };

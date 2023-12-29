@@ -1,6 +1,9 @@
 // Dynamic adress
 import baseAPI from "../utils/api";
 
+// Component import
+import Footer from "../components/Footer";
+
 // Package import
 import { useParams } from "react-router-dom";
 import axios from "axios";

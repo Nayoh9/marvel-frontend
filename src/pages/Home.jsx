@@ -1,22 +1,31 @@
 // Package import
 import { Link } from "react-router-dom";
 
+// Component import
+import Footer from "../components/Footer";
+
 const Home = ({ isConnected, setIsConnected }) => {
   return (
     <section className="home">
       <article className="home-content">
         <div className="home-title">
-          <h1>Welcome to Marvel Universe </h1>
+          <p>WELCOME TO</p>
+          <img
+            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703682526/marvel-logo_pgsubf.svg"
+            alt="Marvel en blanc écrit sur fond rouge"
+          />
+          <p className="universe">UNIVERSE</p>
         </div>
         <div className="home-buttons">
           <Link to={isConnected ? "/characters" : "/signin"}>
-            <p>Sign in</p>
+            <p>SIGN IN</p>
           </Link>
           <Link to={isConnected ? "/characters" : "/signup"}>
-            <p>Sign up</p>
+            <p>SIGN OUT</p>
           </Link>
         </div>
       </article>
+      <Footer />
     </section>
   );
 };

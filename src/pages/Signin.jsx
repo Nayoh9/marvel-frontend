@@ -1,6 +1,9 @@
 // Dynamic adress
 import baseAPI from "../utils/api";
 
+// Component import
+import Footer from "../components/Footer";
+
 // Package import
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -95,6 +98,7 @@ const Signin = ({ setIsConnected, isConnected }) => {
           <p>Still don't have an account ? Signup here !</p>
         </Link>
       </article>
+      <Footer />
     </section>
   );
 };

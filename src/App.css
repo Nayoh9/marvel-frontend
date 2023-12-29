@@ -4,7 +4,7 @@
 } */
 
 body {
-  background-color: var(--second-bcg-color);
+  background-color: var(--main-bcg-color);
   min-height: 100vh;
 }
 
@@ -38,8 +38,8 @@ h2 {
   --main-font-color: white;
   --main-bcg-color: #000000;
   --second-bcg-color: #0d1e49;
-  --main-font-family: "Abel", sans-serif;
-  --main-font-size: 2em;
+  --main-font-family: "Roboto", sans-serif;
+  --main-font-size: 1.2em;
 }
 
 /*--------------- Style of header -----------*/
@@ -50,9 +50,25 @@ header {
   justify-content: space-between;
   width: 100vw;
   height: 80px;
-  background-color: var(--second-bcg-color);
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
+}
+
+header::before {
+  content: "";
+  height: 80px;
+  width: 100vw;
+  position: absolute;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 1) 84%,
+    rgba(23, 23, 24, 1) 100%
+  );
+  opacity: 0.8;
+  z-index: -1;
 }
 
 .navbar {
@@ -66,13 +82,16 @@ header {
   padding: 0 20px;
 }
 
+.navbar :nth-child(1) {
+  border-left: none;
+}
+
 header > a {
   margin-left: 5%;
 }
 
 .logo-marvel {
-  width: 150px;
-  border-radius: 3px;
+  width: 90px;
 }
 
 .hamburger-menu {
@@ -90,51 +109,79 @@ header > a {
 .home {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  position: absolute;
+  top: 0%;
+  width: 100%;
   background: url(./assets/images/home-marvel-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: calc(100vh - 180px);
+  min-height: 100vh;
 }
 
 .home-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
-.home-buttons > a > p {
+.home-buttons > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  margin: 0 15px;
-  margin-top: 10px;
-  border-radius: 10px;
-  border: none;
-  padding: 5px;
+  width: 140px;
+  height: 40px;
+  margin-top: 15px;
   text-align: center;
-  color: var(--main-font-color);
-  background-color: var(--main-bcg-color);
-  font-family: var(--main-font-family);
-  font-size: var(--main-font-size);
-  border: 3px solid var(--second-bcg-color);
-  background-color: #ec1c22;
+  z-index: 1;
+  color: white;
+  letter-spacing: 1px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+}
+
+.home-buttons > a::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  border: 2px solid #ec1c22;
 }
 
 .home-title {
-  font-size: 3rem;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
   color: white;
-  border: 5px solid var(--second-bcg-color);
-  background-color: #ec1c22;
-  border-radius: 0px 40px 0px 40px;
+}
+
+.home-title img {
+  width: 400px;
+  height: auto;
+}
+
+.home-title p {
+  width: 400px;
+  font-size: 4em;
+  font-family: var(--main-font-family);
+  text-align: center;
+  text-shadow: 0px 8px 18px rgba(0, 0, 0, 0.9);
 }
 
 .home-content {
   display: flex;
   flex-direction: column;
-  margin: 200px 0;
   justify-content: space-around;
-  height: 350px;
+}
+
+.home-title .universe {
+  font-size: 5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0px 8px 18px rgba(0, 0, 0, 0.9);
 }
 
 /*---------- Style of CharacterS page -----------*/
@@ -465,8 +512,29 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--second-bcg-color);
+  position: absolute;
+  bottom: 0%;
+  z-index: 1;
   height: 100px;
+  width: 100%;
+}
+
+footer::before {
+  content: "";
+  height: 100px;
+  width: 100vw;
+  position: absolute;
+  bottom: 0%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 1) 84%,
+    rgba(23, 23, 24, 1) 100%
+  );
+  opacity: 0.8;
+  z-index: -1;
 }
 
 footer h2 {

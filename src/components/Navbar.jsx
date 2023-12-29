@@ -20,7 +20,7 @@ const Navbar = ({
           enableScroll();
         }}
       >
-        <li>Characters</li>
+        <li>CHARACTERS</li>
       </Link>
 
       <Link
@@ -30,7 +30,7 @@ const Navbar = ({
           enableScroll();
         }}
       >
-        <li>Comics</li>
+        <li>COMICS</li>
       </Link>
 
       <Link
@@ -40,7 +40,7 @@ const Navbar = ({
           enableScroll();
         }}
       >
-        <li>Favorites</li>
+        <li>FAVORITES</li>
       </Link>
 
       {isConnected ? (
@@ -53,7 +53,7 @@ const Navbar = ({
             enableScroll();
           }}
         >
-          Sign out
+          SIGNOUT
         </Link>
       ) : (
         ""
