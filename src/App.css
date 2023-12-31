@@ -1,7 +1,4 @@
 /*--------------- General settings ---------------*/
-/* html {
-  scroll-behavior: smooth;
-} */
 
 body {
   background-color: var(--main-bcg-color);
@@ -191,10 +188,9 @@ header > a {
 /*---------- Style of CharacterS page -----------*/
 
 .characters {
-  background-image: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704029477/spiderblack_kdvsk8.jpg);
+  background-image: url(./assets/images/black.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background-size: cover; */
   background-position: center;
   min-height: 100vh;
 }
