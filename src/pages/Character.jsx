@@ -127,7 +127,11 @@ const Character = ({ favorites, setFavorites }) => {
         <article className="character">
           <p className="character-name">{data.name}</p>
           <img src={`${data.thumbnail.path}/portrait_xlarge.jpg`} />
-          <p className="character-description">{data.description}</p>
+          <p className="character-description">
+            {data.description
+              ? data.description
+              : "This character has no description.."}
+          </p>
           {!isClicked ? (
             <button onClick={handleAddToFavorites} className="add">
               Add this hero to your favorites
@@ -155,6 +159,7 @@ const Character = ({ favorites, setFavorites }) => {
           );
         })}
       </section>
+      <Footer />
     </section>
   );
 };

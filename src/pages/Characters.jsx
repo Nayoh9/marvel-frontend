@@ -6,6 +6,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Characters = () => {
   window.scrollTo(0, 0);
@@ -60,10 +61,16 @@ const Characters = () => {
       <div className="input">
         <input
           type="text"
+          id="search"
           onChange={handleChangeInput}
-          placeholder="Search for a hero..
-"
+          placeholder="Search for a hero.."
         />
+        <label htmlFor="search">
+          <FontAwesomeIcon
+            icon="fa-solid fa-magnifying-glass"
+            className="glass"
+          />
+        </label>
       </div>
       <div className="characters-container">
         {data.results.map((character) => {
@@ -96,7 +103,8 @@ const Characters = () => {
         })}
       </div>
       <div className="characters-button">
-        <button
+        <FontAwesomeIcon
+          icon="fa-solid fa-angles-left"
           onClick={() => {
             setSkip(skip - limit);
             setCurrentPage(currentPage - 1);
@@ -106,13 +114,15 @@ const Characters = () => {
             });
           }}
           style={{ display: skip > 0 ? "inline" : "none" }}
-        >
-          <a href="#anchor">Previous page</a>
-        </button>
+          className="buttons"
+        />
+
         <span style={{ display: skip >= data.count - 100 ? "none" : "inline" }}>
           {currentPage}
         </span>
-        <button
+
+        <FontAwesomeIcon
+          icon="fa-solid fa-angles-right"
           onClick={() => {
             setSkip(skip + limit);
             setCurrentPage(currentPage + 1);
@@ -123,9 +133,8 @@ const Characters = () => {
             // console.log(skip);
           }}
           style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
-        >
-          <a href="#anchor">Next page</a>
-        </button>
+          className="buttons"
+        />
       </div>
     </section>
   );
