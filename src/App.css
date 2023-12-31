@@ -37,9 +37,11 @@ h2 {
 :root {
   --main-font-color: white;
   --main-bcg-color: #000000;
-  --second-bcg-color: #0d1e49;
   --main-font-family: "Roboto", sans-serif;
-  --main-font-size: 1.2em;
+  --main-font-query-size: 3em;
+  --second-font-query-size: 15px;
+  --main-font-size: 20px;
+  --second-font-size: 16px;
 }
 
 /*--------------- Style of header -----------*/
@@ -101,7 +103,7 @@ header > a {
 
 .navbar.mobile-menu {
   margin-left: 0%;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
 }
 
 /*------------- Style of home page  --------------*/
@@ -126,6 +128,7 @@ header > a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  z-index: 0;
 }
 
 .home-buttons > a {
@@ -155,7 +158,8 @@ header > a {
 .home-title {
   display: flex;
   flex-direction: column;
-  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-title img {
@@ -164,7 +168,6 @@ header > a {
 }
 
 .home-title p {
-  width: 400px;
   font-size: 4em;
   font-family: var(--main-font-family);
   text-align: center;
@@ -175,6 +178,7 @@ header > a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-top: ;
 }
 
 .home-title .universe {
@@ -294,7 +298,7 @@ a div img {
   box-shadow: 0px -8px 39px 0px rgba(0, 0, 0, 0.67) inset;
   -webkit-box-shadow: 0px -8px 39px 0px rgba(0, 0, 0, 0.67) inset;
   -moz-box-shadow: 0px -8px 39px 0px rgba(0, 0, 0, 0.67) inset;
-  border: 5px solid var(--second-bcg-color);
+  border: 5px solid var(--main-bcg-color);
   border-radius: 40px;
 }
 
@@ -514,7 +518,7 @@ footer {
   flex-direction: column;
   position: absolute;
   bottom: 0%;
-  z-index: 1;
+  z-index: 0;
   height: 100px;
   width: 100%;
 }
@@ -539,7 +543,7 @@ footer::before {
 
 footer h2 {
   color: white;
-  font-size: var(--main-font-size);
+  font-size: var(--second-font-size);
   padding-bottom: 10px;
   text-align: center;
 }
@@ -579,8 +583,12 @@ footer img {
     margin: 0;
     margin-left: -100%;
     font-size: 30px;
-    background-color: RGBA(13, 30, 73, 0.61);
+    background-color: RGBA(0, 0, 0, 0.61);
     transition: all 0.5s ease;
+  }
+
+  .navbar.mobile-menu {
+    font-size: 20px;
   }
 
   .navbar a {
@@ -590,20 +598,33 @@ footer img {
   }
 
   /* --------------   Queries for HOME --------------   */
-
-  .home-content {
-    margin: auto 0;
+  .home-title p,
+  .home-title .universe {
+    font-size: 2em;
   }
 
-  .home-title h1 {
-    font-size: 30px;
-    text-align: center;
+  .home-title img {
+    width: 200px;
+  }
+
+  .home-buttons {
+    margin-top: 30px;
+  }
+
+  .home-buttons > a {
+    width: 100px;
+    height: 30px;
+  }
+  /* --------------   Queries for CHARACTERS --------------   */
+
+  .characters {
+    background-attachment: fixed;
   }
 
   /* --------------   Queries for CHARACTER --------------   */
 
   .character img {
-    width: 50%;
+    width: 40%;
   }
 
   .character-container {
@@ -624,9 +645,9 @@ footer img {
     margin: 5px 0;
   }
 
-  /* --------------   Queries for CHARACTER --------------   */
+  /* --------------   Queries for FOOTER --------------   */
 
   footer h2 {
-    font-size: 20px;
+    font-size: var(--second-font-query-size);
   }
 }
