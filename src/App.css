@@ -582,13 +582,9 @@ footer img {
     left: 0%;
     margin: 0;
     margin-left: -100%;
-    font-size: 30px;
+    font-size: 20px;
     background-color: RGBA(0, 0, 0, 0.61);
     transition: all 0.5s ease;
-  }
-
-  .navbar.mobile-menu {
-    font-size: 20px;
   }
 
   .navbar a {
@@ -618,7 +614,7 @@ footer img {
   /* --------------   Queries for CHARACTERS --------------   */
 
   .characters {
-    background-attachment: fixed;
+    background-attachment: fixed !important;
   }
 
   /* --------------   Queries for CHARACTER --------------   */
