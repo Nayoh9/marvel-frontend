@@ -194,7 +194,7 @@ header > a {
   background-image: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704029477/spiderblack_kdvsk8.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  /* background-size: cover; */
   background-position: center;
   min-height: 100vh;
 }
