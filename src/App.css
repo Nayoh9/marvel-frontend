@@ -288,9 +288,28 @@ a div img {
   display: flex;
   align-items: center;
   margin-bottom: 100px;
+  z-index: 1;
 }
 
 .characters-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704119150/comicsblackandwhite_mm0b29.jpg);
+  background-position: center;
+}
+
+.characters-background2 {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background-color: darkred;
+  opacity: 0.7;
+  backdrop-filter: blur(5px);
 }
 
 /*------------ Style of Character page -------------*/
@@ -328,7 +347,8 @@ a div img {
 }
 
 .character img {
-  width: 50%;
+  width: 40%;
+  max-width: 50%;
   border-radius: 20px;
 }
 
@@ -339,7 +359,7 @@ a div img {
 
 .character-description {
   overflow-y: scroll;
-  max-height: 60px;
+  max-height: 40px;
 }
 
 .character-comics {
@@ -359,6 +379,7 @@ a div img {
 .single-comic p {
   padding-top: 0;
   max-height: 30px;
+  overflow-y: scroll;
 }
 
 .single-comic > img {

@@ -59,6 +59,7 @@ const Characters = () => {
   ) : (
     <section className="characters">
       <div className="characters-background"></div>
+      <div className="characters-background2"></div>
       <div className="input">
         <input
           type="text"
