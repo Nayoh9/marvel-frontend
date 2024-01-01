@@ -67,11 +67,8 @@ const Characters = () => {
           onChange={handleChangeInput}
           placeholder="Search for a hero.."
         />
-        <label htmlFor="search">
-          <FontAwesomeIcon
-            icon="fa-solid fa-magnifying-glass"
-            className="glass"
-          />
+        <label htmlFor="search" className="glass">
+          <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
         </label>
       </div>
       <div className="characters-container">

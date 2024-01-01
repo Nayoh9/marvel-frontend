@@ -1,4 +1,5 @@
 // Dynamic adress
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import baseAPI from "../utils/api";
 
 // Package import
@@ -60,9 +61,12 @@ const Comics = ({ favorites, setFavorites }) => {
         <input
           type="text"
           onChange={handleChangeInput}
-          placeholder="search for a comic..
-"
+          id="search"
+          placeholder="search for a comic.."
         />
+        <label htmlFor="search" className="glass">
+          <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+        </label>
       </div>
 
       <div className="comics-container">

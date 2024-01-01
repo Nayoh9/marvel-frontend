@@ -255,7 +255,6 @@ a div img {
 .input input {
   height: 30px;
   padding-left: 30px;
-  min-width: 15%;
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -264,8 +263,8 @@ a div img {
 
 .glass {
   position: absolute;
-  top: 26px;
-  left: 5px;
+  bottom: 40%;
+  left: 5%;
   z-index: 0;
 }
 
@@ -438,6 +437,9 @@ a div img {
 /*------------ Style of ComicS page ------------*/
 
 .comics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: linear-gradient(
     260deg,
     rgba(236, 28, 34, 1) 0%,
@@ -463,11 +465,6 @@ a div img {
 
 .comics-container > article:hover {
   transform: scale(1.1);
-}
-
-.input {
-  display: flex;
-  justify-content: center;
 }
 
 .comics-button  {

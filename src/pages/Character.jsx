@@ -167,7 +167,6 @@ const Character = ({ favorites, setFavorites }) => {
                 src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
                 alt={`comic ${comic.title}`}
               />
-
               <p>{comic.title}</p>
             </article>
           );
