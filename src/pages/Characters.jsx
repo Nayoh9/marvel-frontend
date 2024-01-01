@@ -58,6 +58,7 @@ const Characters = () => {
     <p className="loading">loading page ...</p>
   ) : (
     <section className="characters">
+      <div className="characters-background"></div>
       <div className="input">
         <input
           type="text"

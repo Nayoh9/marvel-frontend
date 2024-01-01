@@ -168,7 +168,6 @@ const Signup = ({ isConnected, setIsConnected }) => {
           <p>Already have an account ? Signin here !</p>
         </Link>
       </article>
-      <Footer />
     </section>
   );
 };

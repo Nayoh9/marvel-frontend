@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 const Home = ({ isConnected, setIsConnected }) => {
   return (
     <section className="home">
+      <div className="background"></div>
       <article className="home-content">
         <div className="home-title">
           <p>WELCOME TO</p>
@@ -25,7 +26,6 @@ const Home = ({ isConnected, setIsConnected }) => {
           </Link>
         </div>
       </article>
-      <Footer />
     </section>
   );
 };

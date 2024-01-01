@@ -107,17 +107,10 @@ header > a {
 
 .home {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  position: absolute;
-  top: 0%;
-  width: 100%;
-  background: url(./assets/images/home-marvel-background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
+  align-items: center;
+  overflow-y: hidden;
+  height: calc(100vh - 160px);
 }
 
 .home-buttons {
@@ -157,6 +150,7 @@ header > a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .home-title img {
@@ -174,7 +168,7 @@ header > a {
 .home-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  z-index: 0;
 }
 
 .home-title .universe {
@@ -184,19 +178,25 @@ header > a {
   text-shadow: 0px 8px 18px rgba(0, 0, 0, 0.9);
 }
 
+.background {
+  background: url(./assets/images/home-marvel-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
 /*---------- Style of CharacterS page -----------*/
 
 .characters {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(36, 33, 33);
-  background: linear-gradient(
-    270deg,
-    rgba(36, 33, 33, 1) 30%,
-    rgba(15, 15, 15, 1) 78%
-  );
-  min-height: 100vh;
 }
 
 .characters-container {
@@ -290,6 +290,9 @@ a div img {
   margin-bottom: 100px;
 }
 
+.characters-background {
+}
+
 /*------------ Style of Character page -------------*/
 
 .character-content {
@@ -297,20 +300,15 @@ a div img {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1703512337/spider-man_frtb9a.jpg);
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  top: 0%;
-  width: 100vw;
+  overflow-y: hidden;
+  height: calc(100vh - 160px);
 }
 
 .character-container {
   display: flex;
   justify-content: center;
   max-width: 300px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     180deg,
@@ -360,6 +358,7 @@ a div img {
 
 .single-comic p {
   padding-top: 0;
+  max-height: 30px;
 }
 
 .single-comic > img {
@@ -375,6 +374,17 @@ a div img {
 .remove {
   background-color: blue;
   border: none;
+}
+
+.character-background {
+  height: 100vh;
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1703512337/spider-man_frtb9a.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  z-index: -1;
 }
 
 /*------------ Style of ComicS page ------------*/
@@ -545,16 +555,15 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: absolute;
-  bottom: 0%;
+  position: relative;
   z-index: 0;
-  height: 100px;
-  width: 100%;
+  height: 80px;
+  width: 100vw;
 }
 
 footer::before {
   content: "";
-  height: 100px;
+  height: 80px;
   width: 100vw;
   position: absolute;
   bottom: 0%;
@@ -658,6 +667,7 @@ footer img {
     width: 200px;
     height: 300px;
     padding: 10px;
+    margin-bottom: 10px;
   }
 
   .character-description {
@@ -672,6 +682,13 @@ footer img {
 
   .single-comic p {
     font-size: var(--second-font-query-size);
+    max-height: 40px;
+    width: 80px;
+    overflow-y: scroll;
+  }
+
+  .single-comic img {
+    max-width: 80px;
   }
 
   /* --------------   Queries for FOOTER --------------   */

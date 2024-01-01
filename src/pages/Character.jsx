@@ -1,9 +1,6 @@
 // Dynamic adress
 import baseAPI from "../utils/api";
 
-// Component import
-import Footer from "../components/Footer";
-
 // Package import
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -123,6 +120,7 @@ const Character = ({ favorites, setFavorites }) => {
     <p className="loading">Loading page ...</p>
   ) : (
     <section className="character-content">
+      <div className="character-background"></div>
       <section className="character-container">
         <article className="character">
           <p className="character-name">{data.name}</p>
@@ -159,7 +157,6 @@ const Character = ({ favorites, setFavorites }) => {
           );
         })}
       </section>
-      <Footer />
     </section>
   );
 };
