@@ -1,9 +1,6 @@
 // Package import
 import { Link } from "react-router-dom";
 
-// Component import
-import Footer from "../components/Footer";
-
 const Home = ({ isConnected, setIsConnected }) => {
   return (
     <section className="home">

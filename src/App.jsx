@@ -12,7 +12,10 @@ import {
   faAnglesRight,
   faAnglesLeft,
   faMagnifyingGlass,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 
 // Components import
 import Header from "./components/Header";
@@ -28,7 +31,15 @@ import Favorites from "./pages/Favorites";
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
 
-library.add(faBars, faXmark, faAnglesRight, faAnglesLeft, faMagnifyingGlass);
+library.add(
+  faBars,
+  faXmark,
+  faAnglesRight,
+  faAnglesLeft,
+  faMagnifyingGlass,
+  faHeart,
+  farHeart
+);
 
 function App() {
   const [favorites, setFavorites] = useState([]);

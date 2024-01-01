@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Character = ({ favorites, setFavorites }) => {
   const params = useParams();
@@ -130,14 +131,29 @@ const Character = ({ favorites, setFavorites }) => {
               ? data.description
               : "This character has no description.."}
           </p>
+
           {!isClicked ? (
-            <button onClick={handleAddToFavorites} className="add">
-              Add this hero to your favorites
-            </button>
+            <div className="character-button">
+              <button onClick={handleAddToFavorites} className="add">
+                Add this hero to your favorites
+              </button>
+              <FontAwesomeIcon
+                icon="fa-regular fa-heart"
+                style={{ color: "darkred" }}
+                className="heart"
+              />
+            </div>
           ) : (
-            <button onClick={handleRemoveFromFavorites} className="remove">
-              Remove this hero from your favorites
-            </button>
+            <div className="character-button">
+              <button onClick={handleRemoveFromFavorites} className="remove">
+                Remove this hero from your favorites
+              </button>
+              <FontAwesomeIcon
+                icon="fa-solid fa-heart"
+                style={{ color: "darkred" }}
+                className="heart"
+              />
+            </div>
           )}
           <p>You can find this hero in the comics below.</p>
         </article>
