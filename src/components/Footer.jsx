@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="socials">
         <a href="https://www.linkedin.com/in/yohann-andr%C3%A9/">
           <img
-            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703686707/LinkedIn_icon.svg_ywrjtt.png"
+            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703686707/marvel/LinkedIn_icon.svg_ywrjtt.png"
             alt="logo linkedin"
           />
         </a>

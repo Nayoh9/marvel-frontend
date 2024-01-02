@@ -90,7 +90,7 @@ const Characters = () => {
                     src={
                       character.thumbnail.extension === "jpg"
                         ? `${character.thumbnail.path}/portrait_xlarge.jpg`
-                        : "https://res.cloudinary.com/dwkwlok28/image/upload/v1703163367/c5d0j21rtliuduc0sddv.jpg"
+                        : "https://res.cloudinary.com/dwkwlok28/image/upload/v1703163367/marvel/c5d0j21rtliuduc0sddv.jpg"
                     }
                     alt={`super hero ${character.name}`}
                   />

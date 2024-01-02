@@ -179,7 +179,7 @@ header > a {
 }
 
 .background {
-  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704119150/marvel/comicsblackandwhite_mm0b29.jpg);
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1703340916/marvel/home-marvel-background_m9pth0.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -297,7 +297,7 @@ a div img {
   position: fixed;
   top: 0%;
   left: 0%;
-  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704119150/comicsblackandwhite_mm0b29.jpg);
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704119150/marvel/comicsblackandwhite_mm0b29.jpg);
   background-position: center;
 }
 
@@ -438,7 +438,7 @@ a div img {
 
 .character-background {
   height: 100vh;
-  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1703512337/spider-man_frtb9a.jpg);
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1703512337/marvel/spider-man_frtb9a.jpg);
   background-position: center;
   background-size: cover;
   position: absolute;
@@ -521,7 +521,7 @@ a div img {
   position: fixed;
   top: 0%;
   left: 0%;
-  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704119150/comicsblackandwhite_mm0b29.jpg);
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704119150/marvel/comicsblackandwhite_mm0b29.jpg);
   background-position: center;
 }
 
