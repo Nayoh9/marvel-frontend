@@ -25,7 +25,7 @@ const Character = ({ favorites, setFavorites }) => {
         setData(response.data);
         setIsloading(false);
 
-        console.log(response.data);
+        // console.log(response.data);
 
         // DB fav_list informations of the user
         const secondResponse = await axios.get(`${baseAPI}/user/find`, {

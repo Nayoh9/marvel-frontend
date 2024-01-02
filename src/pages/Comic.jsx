@@ -5,7 +5,8 @@ import baseAPI from "../utils/api";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Comic = ({ favorites, setFavorites }) => {
   const params = useParams();
@@ -110,19 +111,55 @@ const Comic = ({ favorites, setFavorites }) => {
     <p className="loading">Loading page ...</p>
   ) : (
     <section className="comic-content">
-      <article className="comic">
-        <img src={`${data.thumbnail.path}/portrait_xlarge.jpg`} />
-        <p>{data.description}</p>
-        {!isClicked ? (
-          <button onClick={handleAddToFavorites} className="add">
-            Add this comic to your favorites
-          </button>
-        ) : (
-          <button onClick={handleRemoveFromFavorites} className="remove">
-            Remove this comic from your favorites
-          </button>
-        )}
-      </article>
+      <div className="comic-background"></div>
+      <section className="comic-container">
+        <Link to={"/comics"} className="goback-button">
+          <div>
+            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
+            <p>Back to comics</p>
+          </div>
+        </Link>
+
+        <Link to={"/comics"} className="goback-mobile">
+          <div>
+            <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
+            <p>Back</p>
+          </div>
+        </Link>
+        <article className="comic">
+          <p>{data.title}</p>
+          <img src={`${data.thumbnail.path}/portrait_xlarge.jpg`} />
+          <p>
+            {data.description
+              ? data.description
+              : "This comic has no description.."}
+          </p>
+          {!isClicked ? (
+            <div className="comic-button">
+              <button onClick={handleAddToFavorites} className="add">
+                Add this comic to your favorites
+              </button>
+              <FontAwesomeIcon
+                icon="fa-regular fa-heart"
+                style={{ color: "darkred" }}
+                className="heart"
+              />
+            </div>
+          ) : (
+            <div className="comic-button">
+              <button onClick={handleRemoveFromFavorites} className="remove">
+                Remove this comic from your favorites
+              </button>
+              <FontAwesomeIcon
+                icon="fa-solid fa-heart"
+                style={{ color: "darkred" }}
+                className="heart"
+              />
+            </div>
+          )}
+          <p></p>
+        </article>
+      </section>
     </section>
   );
 };

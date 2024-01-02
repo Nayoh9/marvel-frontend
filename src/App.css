@@ -25,10 +25,6 @@ h2 {
   color: white;
 }
 
-input {
-  font-size: var(--second-font-size);
-}
-
 /*-------------- Font  ----------------*/
 
 @import url("https://fonts.googleapis.com/css2?family=Marvel&display=swap");
@@ -431,6 +427,7 @@ a div img {
   height: 20px;
   position: absolute;
   right: -10%;
+  top: -2px;
 }
 
 .character-button {
@@ -547,18 +544,63 @@ a div img {
   align-items: center;
 }
 
+.comic p {
+  margin: 10px 0;
+  text-align: center;
+  max-width: 300px;
+  max-height: 80px;
+  overflow-y: scroll;
+}
+
 .comic img {
   width: 150px;
+  border-radius: 20px;
+}
+
+.comic-container {
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+  margin-bottom: 10px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0.5) 84%,
+    rgba(23, 23, 24, 0.5) 100%
+  );
+  border: 5px solid var(--main-bcg-color);
+  border-radius: 40px;
 }
 
 .comic-content {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: calc(100vh - 180px);
-  background-color: grey;
+  overflow-y: hidden;
+  height: calc(100vh - 160px);
 }
 
+.comic-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.comic-background {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-image: url(./assets/images/captain.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
 /*------------- Style of favorites page  --------------*/
 .favorites {
   background-color: var(--main-bcg-color);
@@ -706,6 +748,10 @@ footer img {
 /* MEDIA QUERIES  */
 
 @media all and (max-width: 690px) {
+  /*--------------- General settings ---------------*/
+  input {
+    font-size: var(--second-font-size);
+  }
   /* --------------   Queries for HEADER --------------   */
 
   .hamburger-menu {
@@ -798,7 +844,8 @@ footer img {
     max-width: 80px;
   }
 
-  .character-button {
+  .character-button,
+  .comic-button {
     width: 150px;
   }
 
@@ -807,6 +854,7 @@ footer img {
     height: 20px;
     position: absolute;
     right: -15%;
+    top: 5px;
   }
 
   .goback-button {
