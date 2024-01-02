@@ -2,7 +2,7 @@
 import baseAPI from "../utils/api";
 
 // Package import
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
@@ -122,6 +122,19 @@ const Character = ({ favorites, setFavorites }) => {
   ) : (
     <section className="character-content">
       <div className="character-background"></div>
+      <Link to={"/characters"} className="goback-button">
+        <div>
+          <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
+          <p>Back to characters</p>
+        </div>
+      </Link>
+
+      <Link to={"/characters"} className="goback-mobile">
+        <div>
+          <FontAwesomeIcon icon="fa-solid fa-chevron-left" />
+          <p>Back</p>
+        </div>
+      </Link>
       <section className="character-container">
         <article className="character">
           <p className="character-name">{data.name}</p>

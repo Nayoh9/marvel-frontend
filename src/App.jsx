@@ -13,6 +13,7 @@ import {
   faAnglesLeft,
   faMagnifyingGlass,
   faHeart,
+  faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
@@ -38,7 +39,8 @@ library.add(
   faAnglesLeft,
   faMagnifyingGlass,
   faHeart,
-  farHeart
+  farHeart,
+  faChevronLeft
 );
 
 function App() {

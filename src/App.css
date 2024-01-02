@@ -197,6 +197,7 @@ header > a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: calc(100vh - 160px);
 }
 
 .characters-container {
@@ -434,6 +435,30 @@ a div img {
   z-index: -1;
 }
 
+.goback-button {
+  display: flex;
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  color: white;
+  font-family: var(--main-font-family);
+}
+
+.goback-button:hover {
+  text-decoration: underline;
+}
+
+.goback-button div {
+  display: flex;
+}
+
+.goback-button p {
+  margin-left: 5px;
+}
+
+.goback-mobile {
+  display: none;
+}
 /*------------ Style of ComicS page ------------*/
 
 .comics {
@@ -446,7 +471,7 @@ a div img {
     rgba(2, 2, 19, 1) 35%,
     rgba(13, 30, 73, 1) 80%
   );
-  min-height: 100vh;
+  min-height: calc(100vh - 160px);
 }
 
 .comics-container {
@@ -467,12 +492,36 @@ a div img {
   transform: scale(1.1);
 }
 
-.comics-button  {
+.comics-button {
   display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+  z-index: 1;
 }
 
 .comics-button span {
   color: white;
+}
+
+.comics-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704119150/comicsblackandwhite_mm0b29.jpg);
+  background-position: center;
+}
+
+.comics-background2 {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background-color: darkred;
+  opacity: 0.7;
+  backdrop-filter: blur(5px);
 }
 
 /*------------- Style of comic page  --------------*/
@@ -668,6 +717,7 @@ footer img {
     font-size: 20px;
     background-color: RGBA(0, 0, 0, 0.61);
     transition: all 0.5s ease;
+    overflow-y: scroll;
   }
 
   .navbar a {
@@ -745,6 +795,25 @@ footer img {
     height: 20px;
     position: absolute;
     right: -15%;
+  }
+
+  .goback-button {
+    display: none;
+  }
+
+  .goback-mobile {
+    display: flex;
+  }
+
+  .goback-mobile div {
+    display: flex;
+    position: absolute;
+    left: 3%;
+    top: 15%;
+  }
+
+  .goback-mobile p {
+    margin-left: 5px;
   }
 
   /* --------------   Queries for FOOTER --------------   */

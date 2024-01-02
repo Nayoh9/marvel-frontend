@@ -57,6 +57,8 @@ const Comics = ({ favorites, setFavorites }) => {
     <p className="loading">Loading page ...</p>
   ) : (
     <section className="comics">
+      <div className="characters-background"></div>
+      <div className="characters-background2"></div>
       <div className="input">
         <input
           type="text"
@@ -99,7 +101,9 @@ const Comics = ({ favorites, setFavorites }) => {
         })}
       </div>
       <div className="comics-button">
-        <button
+        <FontAwesomeIcon
+          icon="fa-solid fa-angles-left"
+          className="buttons"
           onClick={() => {
             setSkip(skip - limit);
             setCurrentPage(currentPage - 1);
@@ -108,13 +112,14 @@ const Comics = ({ favorites, setFavorites }) => {
             // console.log(skip);
           }}
           style={{ display: skip === 0 ? "none" : "inline" }}
-        >
-          <a href="#anchor">Previous page</a>
-        </button>
+        />
+
         <span style={{ display: skip >= data.count - 100 ? "none" : "inline" }}>
           {currentPage}
         </span>
-        <button
+        <FontAwesomeIcon
+          icon="fa-solid fa-angles-right"
+          className="buttons"
           onClick={() => {
             setSkip(skip + limit);
             setCurrentPage(currentPage + 1);
@@ -123,9 +128,9 @@ const Comics = ({ favorites, setFavorites }) => {
             // console.log(skip);
           }}
           style={{ display: skip >= data.count - 100 ? "none" : "inline" }}
-        >
-          <a href="#anchor">Next page</a>
-        </button>
+        />
+
+        {/* <button></button> */}
       </div>
     </section>
   );
