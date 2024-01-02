@@ -110,21 +110,19 @@ const Comic = ({ favorites, setFavorites }) => {
     <p className="loading">Loading page ...</p>
   ) : (
     <section className="comic-content">
-      <section className="comic-container">
-        <article className="comic">
-          <img src={`${data.thumbnail.path}/portrait_xlarge.jpg`} />
-          <p>{data.description}</p>
-          {!isClicked ? (
-            <button onClick={handleAddToFavorites} className="add">
-              Add this comic to your favorites
-            </button>
-          ) : (
-            <button onClick={handleRemoveFromFavorites} className="remove">
-              Remove this comic from your favorites
-            </button>
-          )}
-        </article>
-      </section>
+      <article className="comic">
+        <img src={`${data.thumbnail.path}/portrait_xlarge.jpg`} />
+        <p>{data.description}</p>
+        {!isClicked ? (
+          <button onClick={handleAddToFavorites} className="add">
+            Add this comic to your favorites
+          </button>
+        ) : (
+          <button onClick={handleRemoveFromFavorites} className="remove">
+            Remove this comic from your favorites
+          </button>
+        )}
+      </article>
     </section>
   );
 };

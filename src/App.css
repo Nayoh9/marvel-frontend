@@ -7,7 +7,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 0px;
-  background: transparent; /* make scrollbar transparent */
+  display: none;
 }
 
 .loading {
@@ -365,8 +365,18 @@ a div img {
 .character-comics {
   display: flex;
   max-width: 80%;
+  padding: 10px;
+  border-radius: 10px;
   overflow-x: scroll;
   overflow-y: hidden;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0.5) 84%,
+    rgba(23, 23, 24, 0.5) 100%
+  );
 }
 
 .single-comic {
@@ -380,6 +390,7 @@ a div img {
   padding-top: 0;
   max-height: 30px;
   overflow-y: scroll;
+  text-align: center;
 }
 
 .single-comic > img {
@@ -526,16 +537,10 @@ a div img {
 
 /*------------- Style of comic page  --------------*/
 
-.comic-container {
-  display: flex;
-  justify-content: center;
-}
-
 .comic {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
 }
 
 .comic img {
@@ -543,6 +548,9 @@ a div img {
 }
 
 .comic-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: calc(100vh - 180px);
   background-color: grey;
 }
@@ -777,7 +785,7 @@ footer img {
 
   .single-comic p {
     font-size: var(--second-font-query-size);
-    max-height: 40px;
+
     width: 80px;
     overflow-y: scroll;
   }
