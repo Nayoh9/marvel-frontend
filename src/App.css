@@ -25,6 +25,10 @@ h2 {
   color: white;
 }
 
+input {
+  font-size: var(--second-font-size);
+}
+
 /*-------------- Font  ----------------*/
 
 @import url("https://fonts.googleapis.com/css2?family=Marvel&display=swap");
