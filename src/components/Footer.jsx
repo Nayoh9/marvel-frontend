@@ -12,7 +12,7 @@ const Footer = () => {
         </a>
         <a href="https://github.com/Nayoh9">
           <img
-            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703686714/github_irxfsl.png"
+            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703686714/marvel/github_irxfsl.png"
             alt="chat blanc sur fond noir"
           />
         </a>

@@ -179,7 +179,7 @@ header > a {
 }
 
 .background {
-  background: url(./assets/images/home-marvel-background.jpg);
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704119150/marvel/comicsblackandwhite_mm0b29.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -595,7 +595,7 @@ a div img {
   position: absolute;
   top: 0%;
   left: 0%;
-  background-image: url(./assets/images/captain.jpg);
+  background-image: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704213629/marvel/captain_ix8dlv.jpg);
   background-position: center;
   background-size: cover;
   z-index: -1;
