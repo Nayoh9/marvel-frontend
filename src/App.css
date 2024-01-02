@@ -597,7 +597,6 @@ a div img {
   left: 0%;
   background-image: url(./assets/images/captain.jpg);
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
 }

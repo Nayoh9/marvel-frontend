@@ -9,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Comic = ({ favorites, setFavorites }) => {
+  window.scrollTo(0, 0);
   const params = useParams();
   const id = params.id;
 

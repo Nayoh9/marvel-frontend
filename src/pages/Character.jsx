@@ -9,6 +9,7 @@ import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Character = ({ favorites, setFavorites }) => {
+  window.scrollTo(0, 0);
   const params = useParams();
   const id = params.characterID;
 
