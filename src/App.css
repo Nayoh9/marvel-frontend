@@ -1,18 +1,7 @@
 /*--------------- General settings ---------------*/
 
-html,
-body {
-  /* solution probleme scroll sur tel  */
-  overflow-x: hidden;
-  /* solution probleme scroll sur tel  */
-}
-
 body {
   background-color: var(--main-bcg-color);
-  /* solution probleme scroll sur tel  */
-  position: relative;
-  /* solution probleme scroll sur tel  */
-
   height: 100vh;
 }
 
