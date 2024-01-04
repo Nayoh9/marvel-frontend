@@ -96,7 +96,7 @@ const Favorites = ({ favorites, setFavorites }) => {
       <article className="favorite-logo">
         <img
           src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703682526/marvel/marvel-logo_pgsubf.svg"
-          alt="marvel en blanc sur fond rouges"
+          alt="marvel en blanc sur fond rouge"
         />
       </article>
     </section>
