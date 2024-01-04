@@ -47,7 +47,7 @@ const Favorites = ({ favorites, setFavorites }) => {
             />
             <img
               src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704382733/marvel/spiderman_logo_i5e7jl.svg"
-              alt="bouclier en spirale captain america"
+              alt="arraignée noire sur fond rouge style spiderman"
             />
           </div>
           <div className="add-fav-info">
@@ -58,10 +58,13 @@ const Favorites = ({ favorites, setFavorites }) => {
             <Link to={"/comics"}>Go to comics</Link>
           </div>
           <div className="no-fav">
-            <img src="src/assets/images/spiderman logo.svg" alt="" />
+            <img
+              src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704382733/marvel/spiderman_logo_i5e7jl.svg"
+              alt="arraignée noire sur fond rouge style spiderman"
+            />
             <img
               src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704380261/marvel/captain-america-seeklogo.com_j7odqp.svg"
-              alt=""
+              alt="bouclier en spirale avec une étoile au milieu style captain america"
             />
           </div>
         </article>
