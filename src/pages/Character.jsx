@@ -169,7 +169,7 @@ const Character = ({ favorites, setFavorites }) => {
               />
             </div>
           )}
-          <p>You can find this hero in the comics below.</p>
+          <p>You can find this character in the comics below.</p>
         </article>
       </section>
 

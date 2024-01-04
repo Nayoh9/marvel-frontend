@@ -380,9 +380,10 @@ a div img {
 }
 
 .single-comic {
-  padding: 0 10px;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  padding: 0 10px;
   width: 150px;
 }
 
@@ -602,8 +603,7 @@ a div img {
 }
 /*------------- Style of favorites page  --------------*/
 .favorites {
-  background-color: var(--main-bcg-color);
-  height: calc(100vh - 180px);
+  height: calc(100vh - 160px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -614,12 +614,26 @@ a div img {
   display: flex;
   width: auto;
   max-width: 80%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0.5) 84%,
+    rgba(23, 23, 24, 0.5) 100%
+  );
+  margin-top: 10px;
+  border: 2px solid var(--main-bcg-color);
+  border-radius: 10px;
   overflow-y: scroll;
+}
+
+.favorites-logos {
+  z-index: 1;
 }
 
 .favorites-article {
   width: 150px;
-  height: 350px;
   padding: 10px;
 }
 
@@ -629,6 +643,55 @@ a div img {
 
 .favorites p {
   color: white;
+}
+
+.favorites-title {
+  font-size: var(--main-font-size);
+}
+
+.favorites-background {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704379813/marvel/metal-fond-grunge-rayures-taches_l6qwth.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.add-fav-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0.5) 84%,
+    rgba(23, 23, 24, 0.5) 100%
+  );
+  border: 2px solid var(--main-bcg-color);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.add-fav-info a,
+.add-fav-info p {
+  margin: 5px 0;
+}
+
+.no-fav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.no-fav img {
+  height: 80px;
+  width: 80px;
 }
 
 /*------------- Style of signup page  --------------*/

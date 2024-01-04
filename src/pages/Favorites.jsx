@@ -37,8 +37,37 @@ const Favorites = ({ favorites, setFavorites }) => {
     <p className="loading">Loading page ...</p>
   ) : (
     <section className="favorites">
-      <p>Your favorite comics / characters</p>
-      {favEmpty && <p>Nothing here please fill your favorites !</p>}
+      <div className="favorites-background"></div>
+      {favEmpty ? (
+        <article className="add-fav">
+          <div className="no-fav">
+            <img
+              src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704380261/marvel/captain-america-seeklogo.com_j7odqp.svg"
+              alt="bouclier en spirale captain america"
+            />
+            <img
+              src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704382733/marvel/spiderman_logo_i5e7jl.svg"
+              alt="bouclier en spirale captain america"
+            />
+          </div>
+          <div className="add-fav-info">
+            <p className="favorites-title">
+              Nothing here please fill your favorites !
+            </p>
+            <Link to={"/characters"}>Go to character</Link>
+            <Link to={"/comics"}>Go to comics</Link>
+          </div>
+          <div className="no-fav">
+            <img src="src/assets/images/spiderman logo.svg" alt="" />
+            <img
+              src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704380261/marvel/captain-america-seeklogo.com_j7odqp.svg"
+              alt=""
+            />
+          </div>
+        </article>
+      ) : (
+        <p className="favorites-title">Your favorite comics / characters</p>
+      )}
       <section className="favorites-container">
         {data.map((elem) => {
           return (
@@ -61,6 +90,15 @@ const Favorites = ({ favorites, setFavorites }) => {
           );
         })}
       </section>
+      <article className="favorites-logos">
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+      </article>
     </section>
   );
 };
