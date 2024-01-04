@@ -2,6 +2,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import baseAPI from "../utils/api";
 
+// Component import
+import Loading from "../components/Loading";
+
 // Package import
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -54,7 +57,7 @@ const Comics = ({ favorites, setFavorites }) => {
   };
 
   return isLoading ? (
-    <p className="loading">Loading page ...</p>
+    <Loading />
   ) : (
     <section className="comics">
       <div className="characters-background"></div>

@@ -1,6 +1,9 @@
 // Dynamic adress
 import baseAPI from "../utils/api";
 
+// Component import
+import Loading from "../components/Loading";
+
 // Package import
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
@@ -45,6 +48,8 @@ const Character = ({ favorites, setFavorites }) => {
   }, [favorites, id]);
 
   // console.log("userfavlist >>", userFavList);
+
+  console.log(data);
 
   // To verify if a favorites is existing in the fav_list array
 
@@ -119,7 +124,7 @@ const Character = ({ favorites, setFavorites }) => {
   };
 
   return isLoading ? (
-    <p className="loading">Loading page ...</p>
+    <Loading />
   ) : (
     <section className="character-content">
       <div className="character-background"></div>
@@ -169,23 +174,31 @@ const Character = ({ favorites, setFavorites }) => {
               />
             </div>
           )}
-          <p>You can find this character in the comics below.</p>
+          {data.comics.length === 0 ? (
+            <p>No comics found for this character</p>
+          ) : (
+            <p>You can find this character in the comics below.</p>
+          )}
         </article>
       </section>
 
-      <section className="character-comics">
-        {data.comics.map((comic) => {
-          return (
-            <article className="single-comic" key={comic.title}>
-              <img
-                src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
-                alt={`comic ${comic.title}`}
-              />
-              <p>{comic.title}</p>
-            </article>
-          );
-        })}
-      </section>
+      {data.comics.length === 0 ? (
+        ""
+      ) : (
+        <section className="character-comics">
+          {data.comics.map((comic) => {
+            return (
+              <article className="single-comic" key={comic.title}>
+                <img
+                  src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
+                  alt={`comic ${comic.title}`}
+                />
+                <p>{comic.title}</p>
+              </article>
+            );
+          })}
+        </section>
+      )}
     </section>
   );
 };

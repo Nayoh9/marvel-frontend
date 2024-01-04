@@ -1,6 +1,9 @@
 // Dynamic adress
 import baseAPI from "../utils/api";
 
+// Component import
+import Loading from "../components/Loading";
+
 // Package import
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
@@ -34,7 +37,7 @@ const Favorites = ({ favorites, setFavorites }) => {
 
   // console.log(data);
   return isLoading ? (
-    <p className="loading">Loading page ...</p>
+    <Loading />
   ) : (
     <section className="favorites">
       <div className="favorites-background"></div>

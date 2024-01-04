@@ -21,7 +21,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.1",
-    "react-router-dom": "^6.18.0"
+    "react-router-dom": "^6.18.0",
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

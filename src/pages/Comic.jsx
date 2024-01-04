@@ -1,6 +1,9 @@
 // Dynamic adress
 import baseAPI from "../utils/api";
 
+// Component import
+import Loading from "../components/Loading";
+
 // Package import
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -109,7 +112,7 @@ const Comic = ({ favorites, setFavorites }) => {
   };
 
   return isLoading ? (
-    <p className="loading">Loading page ...</p>
+    <Loading />
   ) : (
     <section className="comic-content">
       <div className="comic-background"></div>

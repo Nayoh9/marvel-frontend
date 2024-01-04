@@ -1,6 +1,9 @@
 // Dynamic adress
 import baseAPI from "../utils/api";
 
+// Component import
+import Loading from "../components/Loading";
+
 // Package import
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -55,7 +58,7 @@ const Characters = () => {
   };
 
   return isLoading ? (
-    <p className="loading">loading page ...</p>
+    <Loading />
   ) : (
     <section className="characters">
       <div className="characters-background"></div>

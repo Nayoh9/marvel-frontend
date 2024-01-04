@@ -31,6 +31,7 @@ import Comic from "./pages/Comic";
 import Favorites from "./pages/Favorites";
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin";
+import Loading from "./components/Loading";
 
 library.add(
   faBars,
@@ -59,6 +60,8 @@ function App() {
             <Home isConnected={isConnected} setIsConnected={setIsConnected} />
           }
         />
+
+        <Route path={"loader"} element={<Loading />} />
 
         <Route path={"/characters"} element={<Characters />} />
 

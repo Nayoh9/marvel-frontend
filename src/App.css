@@ -10,13 +10,6 @@ body {
   display: none;
 }
 
-.loading {
-  height: 100vh;
-  background-color: var(--main-bcg-color);
-  color: var(--main-font-color);
-  font-family: var(--main-font-family);
-}
-
 p,
 a,
 h1,
@@ -39,6 +32,22 @@ h2 {
   --second-font-query-size: 15px;
   --main-font-size: 20px;
   --second-font-size: 16px;
+}
+
+/*--------------- Style of Loading-----------*/
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 160px);
+  color: var(--main-font-color);
+  font-family: var(--main-font-family);
+}
+
+.loading p {
+  margin-bottom: 10px;
 }
 
 /*--------------- Style of header -----------*/
@@ -339,6 +348,7 @@ a div img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .character img {
@@ -378,6 +388,7 @@ a div img {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 120px;
   padding: 0 10px;
 }
 
