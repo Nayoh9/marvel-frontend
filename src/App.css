@@ -352,7 +352,6 @@ a div img {
 }
 
 .character img {
-  width: 40%;
   max-width: 50%;
   border-radius: 20px;
 }
@@ -892,7 +891,7 @@ footer img {
   }
 
   .character img {
-    width: 50%;
+    width: 40%;
   }
 
   .character-container {
