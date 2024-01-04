@@ -1,8 +1,8 @@
 export const disableScroll = () => {
-    document.body.style.overflowY = "hidden";
+    document.body.style.overflow = "hidden";
 };
 
 // Fonction pour réactiver le scroll
 export const enableScroll = () => {
-    document.body.style.overflowY = "visible";
+    document.body.style.overflow = "visible";
 };
