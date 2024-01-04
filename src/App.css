@@ -824,7 +824,6 @@ footer img {
   .navbar.mobile-menu {
     margin-left: 0%;
     backdrop-filter: blur(6px);
-    z-index: 2;
   }
 
   .navbar {
@@ -832,7 +831,7 @@ footer img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0%;
@@ -843,6 +842,7 @@ footer img {
     background-color: RGBA(0, 0, 0, 0.61);
     transition: all 0.5s ease;
     overflow-y: scroll;
+    z-index: 2;
   }
 
   .navbar a {
