@@ -93,14 +93,11 @@ const Favorites = ({ favorites, setFavorites }) => {
           );
         })}
       </section>
-      <article className="favorites-logos">
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
+      <article className="favorite-logo">
+        <img
+          src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703682526/marvel/marvel-logo_pgsubf.svg"
+          alt="marvel en blanc sur fond rouges"
+        />
       </article>
     </section>
   );

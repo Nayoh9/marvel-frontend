@@ -694,6 +694,11 @@ a div img {
   width: 80px;
 }
 
+.favorite-logo img {
+  width: 100px;
+  height: 100px;
+}
+
 /*------------- Style of signup page  --------------*/
 
 .signup-container {
