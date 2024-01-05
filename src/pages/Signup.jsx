@@ -97,8 +97,24 @@ const Signup = ({ isConnected, setIsConnected }) => {
 
   return (
     <section className="signup-container">
+      <div className="signup-background"></div>
       <article className="signup">
-        <h1>Signup</h1>
+        <img
+          src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703682526/marvel/marvel-logo_pgsubf.svg"
+          alt="marvel en blanc sur fond rouge"
+        />
+        <div className="signup-logo">
+          <img
+            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704382733/marvel/spiderman_logo_i5e7jl.svg"
+            alt="arraignée noire sur fond rouge style spiderman"
+          />
+          <h2>Signup</h2>
+          <img
+            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704382733/marvel/spiderman_logo_i5e7jl.svg"
+            alt="arraignée noire sur fond rouge style spiderman"
+          />
+        </div>
+
         <form onSubmit={handleSubmit}>
           <input
             type="text"

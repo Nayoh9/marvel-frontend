@@ -59,8 +59,24 @@ const Signin = ({ setIsConnected, isConnected }) => {
   };
   return (
     <section className="signin-container">
+      <div className="signin-background"></div>
       <article className="signin">
-        <h1>Signin</h1>
+        <img
+          src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703682526/marvel/marvel-logo_pgsubf.svg"
+          alt="marvel en blanc sur fond rouge"
+        />
+        <div className="signin-logo">
+          <img
+            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704380261/marvel/captain-america-seeklogo.com_j7odqp.svg"
+            alt="bouclier en spirale avec une étoile au milieu style captain america"
+          />
+          <h2>Signin</h2>
+          <img
+            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704380261/marvel/captain-america-seeklogo.com_j7odqp.svg"
+            alt="bouclier en spirale avec une étoile au milieu style captain america"
+          />
+        </div>
+
         <form onSubmit={handleSubmit}>
           <input
             type="email"

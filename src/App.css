@@ -717,23 +717,39 @@ a div img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 160px);
 }
 
 .signup {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-around;
+  width: 350px;
+  height: 500px;
+  background: rgb(105, 4, 4);
+  background: linear-gradient(
+    180deg,
+    rgba(105, 4, 4, 1) 30%,
+    rgba(0, 0, 0, 0.7189250700280112) 78%
+  );
+  border-radius: 5px;
 }
 
 .signup > form {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 25%;
+  align-items: center;
+  width: 80%;
+}
+
+.signup h2 {
+  font-size: var(--main-font-size);
+  padding: 0px 10px;
+}
+
+.signup img {
+  width: 40%;
 }
 
 form > input {
@@ -744,37 +760,105 @@ form > input {
   color: black;
 }
 
+.signup-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-logo img {
+  width: 15%;
+}
+
+.signup-background {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background: url(src/assets/images/avengers-3840x2716-1140.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+
 /*------------- Style of signin page  --------------*/
 
 .signin-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 160px);
 }
 
 .signin {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-around;
+  width: 350px;
+  height: 500px;
+  background: rgb(105, 4, 4);
+  background: linear-gradient(
+    180deg,
+    rgba(105, 4, 4, 1) 30%,
+    rgba(0, 0, 0, 0.7189250700280112) 78%
+  );
+  border-radius: 5px;
+}
+
+.signin img {
+  width: 40%;
+}
+
+.signin h2 {
+  font-size: var(--main-font-size);
+  padding: 0px 10px;
 }
 
 .signin > form {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 25%;
+  align-items: center;
+  width: 80%;
+}
+
+form input {
+  border-radius: 5px;
+  height: 20px;
+  width: 80%;
+  border: none;
+}
+
+form button {
+  border-radius: 5px;
+  border: none;
+  height: 20px;
+  width: 30%;
 }
 
 .signin-container a,
 .signin-container p {
-  color: black;
-  font-family: var(--main-font-family);
+  color: var(--main-font-color);
 }
 
+.signin-background {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background: url(src/assets/images/avengers-3840x2716-1140.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.signin-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-logo img {
+  width: 15%;
+}
 /*------------- Style of Footer  --------------*/
 
 footer {
@@ -967,6 +1051,56 @@ footer img {
   /* --------------   Queries for COMIC --------------   */
   .comic p {
     font-size: var(--second-font-query-size);
+  }
+
+  /* --------------   Queries for SIGNIN --------------   */
+  .signin {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+  }
+
+  .signin a {
+    font-size: var(--second-font-query-size);
+  }
+
+  .signin img,
+  .signin-logo {
+    width: 25%;
+  }
+
+  .signin-logo h2 {
+    font-size: var(--second-font-query-size);
+  }
+
+  form input {
+    width: 70%;
+    height: 15px;
+  }
+
+  /* --------------   Queries for SIGNUP --------------   */
+  .signup {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+  }
+
+  .signup a {
+    font-size: var(--second-font-query-size);
+  }
+
+  .signup img,
+  .signup-logo {
+    width: 25%;
+  }
+
+  .signup-logo h2 {
+    font-size: var(--second-font-query-size);
+  }
+
+  form input {
+    width: 70%;
+    height: 15px;
   }
 
   /* --------------   Queries for FOOTER --------------   */
