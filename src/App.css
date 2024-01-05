@@ -774,6 +774,8 @@ form > input {
   width: 100vw;
   height: 100vh;
   position: absolute;
+  left: 0%;
+  top: 0%;
   background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704464175/marvel/wp9212065-marvel-red-4k-wallpapers_kkudds.jpg);
   background-position: center;
   background-size: cover;
@@ -844,6 +846,8 @@ form button {
   width: 100vw;
   height: 100vh;
   position: absolute;
+  left: 0%;
+  top: 0%;
   background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704464175/marvel/wp9212065-marvel-red-4k-wallpapers_kkudds.jpg);
   background-position: center;
   background-size: cover;
