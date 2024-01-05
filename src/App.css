@@ -28,7 +28,7 @@ h2 {
   --main-font-color: white;
   --main-bcg-color: #000000;
   --main-font-family: "Roboto", sans-serif;
-  --main-font-query-size: 3em;
+  --main-font-query-size: 10px;
   --second-font-query-size: 15px;
   --main-font-size: 20px;
   --second-font-size: 16px;
@@ -616,8 +616,10 @@ a div img {
 
 .favorites-container {
   display: flex;
+  align-items: center;
   width: auto;
   max-width: 80%;
+  padding: 10px;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     180deg,
@@ -638,7 +640,13 @@ a div img {
 
 .favorites-article {
   width: 150px;
-  padding: 10px;
+  padding: 0 10px;
+}
+
+.favorites-article p {
+  max-width: 150px;
+  height: 16px;
+  overflow-y: hidden;
 }
 
 .favorites-container article div {
@@ -888,11 +896,12 @@ footer img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 10px;
   }
 
-  .character img {
+  /* .character img {
     width: 40%;
-  }
+  } */
 
   .character-container {
     width: 200px;
@@ -952,6 +961,11 @@ footer img {
 
   .goback-mobile p {
     margin-left: 5px;
+  }
+
+  /* --------------   Queries for COMIC --------------   */
+  .comic p {
+    font-size: var(--second-font-query-size);
   }
 
   /* --------------   Queries for FOOTER --------------   */

@@ -89,7 +89,6 @@ const Favorites = ({ favorites, setFavorites }) => {
                     alt=""
                   />
                   <p>{elem.name ? elem.name : elem.title}</p>
-                  <p>{elem.description}</p>
                 </div>
               </Link>
             </article>
