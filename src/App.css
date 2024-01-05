@@ -900,7 +900,8 @@ footer img {
   }
 
   .character img {
-    width: 40%;
+    width: 80px;
+    height: 100px;
   }
 
   .character-container {
