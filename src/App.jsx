@@ -21,6 +21,7 @@ import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 // Components import
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ModalComic from "./components/ModalComic";
 
 // Pages import
 import Characters from "./pages/Characters";

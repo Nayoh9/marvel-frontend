@@ -3,6 +3,7 @@ import baseAPI from "../utils/api";
 
 // Component import
 import Loading from "../components/Loading";
+import ModalComic from "../components/ModalComic";
 
 // Package import
 import { Link, useParams } from "react-router-dom";
@@ -21,6 +22,8 @@ const Character = ({ favorites, setFavorites }) => {
   const [userFavList, setUserFavList] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [comicID, setComicID] = useState("");
   useEffect(() => {
     try {
       // Infomations about the character
@@ -49,7 +52,7 @@ const Character = ({ favorites, setFavorites }) => {
 
   // console.log("userfavlist >>", userFavList);
 
-  console.log(data);
+  // console.log(data);
 
   // To verify if a favorites is existing in the fav_list array
 
@@ -127,6 +130,12 @@ const Character = ({ favorites, setFavorites }) => {
     <Loading />
   ) : (
     <section className="character-content">
+      {isModalOpen ? (
+        <ModalComic comicID={comicID} setIsModalOpen={setIsModalOpen} />
+      ) : (
+        ""
+      )}
+
       <div className="character-background"></div>
       <Link to={"/characters"} className="goback-button">
         <div>
@@ -192,6 +201,11 @@ const Character = ({ favorites, setFavorites }) => {
                 <img
                   src={`${comic.thumbnail.path}/portrait_xlarge.jpg`}
                   alt={`comic ${comic.title}`}
+                  onClick={() => {
+                    console.log(comic);
+                    setComicID(comic);
+                    setIsModalOpen(true);
+                  }}
                 />
                 <p>{comic.title}</p>
               </article>

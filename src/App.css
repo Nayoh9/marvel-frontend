@@ -364,6 +364,7 @@ a div img {
 .character-description {
   overflow-y: scroll;
   max-height: 40px;
+  width: 200px;
 }
 
 .character-comics {
@@ -553,6 +554,7 @@ a div img {
   margin: 10px 0;
   text-align: center;
   max-width: 300px;
+  width: 250px;
   max-height: 80px;
   overflow-y: scroll;
 }
@@ -920,6 +922,43 @@ footer img {
   width: 100px;
 }
 
+/*------------- Style of MODAL page  --------------*/
+.modal-comic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background: rgb(0, 0, 0, 0.9);
+  z-index: 2;
+}
+
+.modal-comic article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: 680px;
+  width: 560px;
+}
+
+.modal-comic article a:hover {
+  text-decoration: underline;
+}
+
+.modal-comic div {
+  display: flex;
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+.modal-comic img {
+  width: 70%;
+  margin-bottom: 10px;
+}
+
 /* MEDIA QUERIES  */
 
 @media all and (max-width: 690px) {
@@ -1084,6 +1123,7 @@ footer img {
 
   .signin-logo h2 {
     font-size: var(--second-font-query-size);
+    text-align: center;
   }
 
   form input {
@@ -1122,3 +1162,5 @@ footer img {
     font-size: var(--second-font-query-size);
   }
 }
+
+/* --------------   Queries for MODAL --------------   */
