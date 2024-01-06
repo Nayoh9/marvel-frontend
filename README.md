@@ -1,8 +1,24 @@
-# React + Vite
+# HOW TO INSTALL NECESSARY SOFTWARES
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To open your code of the project and amend it, you will need to install:
 
-Currently, two official plugins are available:
+## VISUAL STUDIO CODE (VSC)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Can be downloaded from https://code.visualstudio.com/
+
+## NODE
+
+Can at downloaded from https://nodejs.org/en
+
+# HOW TO CLONE THE REPOSITORY
+
+- in GitHub, you will need to copy the URL of the front end repository to be able to clone it into VSC code.
+  For this you will need to your GitHub account > repositories > nudge-frontend (click on it) > Code and copy the HTTPS link
+
+- in VSC code you will need to run the command (replace the element between the \*\* \*\*, and the \*\* as well, by the link copied)
+
+```
+git clone ***https://***
+```
+
+This can be done for the backend as well if you'd like to review it. However it's not necessary to have the backend open on your computer as the server is hosted on Northflank
