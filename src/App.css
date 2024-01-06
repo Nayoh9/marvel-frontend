@@ -942,6 +942,7 @@ footer img {
   position: relative;
   height: 680px;
   width: 560px;
+  margin-bottom: 100px;
 }
 
 .modal-comic article a:hover {
