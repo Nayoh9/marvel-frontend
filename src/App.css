@@ -752,6 +752,10 @@ a div img {
   width: 40%;
 }
 
+.signup p {
+  text-align: center;
+}
+
 form > input {
   margin-bottom: 20px;
 }
@@ -807,6 +811,10 @@ form > input {
   border-radius: 5px;
 }
 
+.signin p {
+  text-align: center;
+}
+
 .signin img {
   width: 40%;
 }
@@ -834,7 +842,7 @@ form button {
   border-radius: 5px;
   border: none;
   height: 20px;
-  width: 30%;
+  min-width: 30%;
 }
 
 .signin-container a,
@@ -974,7 +982,8 @@ footer img {
   }
 
   .home-buttons > a {
-    width: 100px;
+    min-width: 100px;
+    max-width: 150px;
     height: 30px;
   }
 
