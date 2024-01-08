@@ -19,7 +19,7 @@ const Home = ({ isConnected, setIsConnected }) => {
             <p>SIGN IN</p>
           </Link>
           <Link to={isConnected ? "/characters" : "/signup"}>
-            <p>SIGN OUT</p>
+            <p>SIGN UP</p>
           </Link>
         </div>
       </article>
