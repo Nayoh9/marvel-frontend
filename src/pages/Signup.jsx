@@ -100,17 +100,17 @@ const Signup = ({ isConnected, setIsConnected }) => {
       <div className="signup-background"></div>
       <article className="signup">
         <img
-          src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703682526/marvel/marvel-logo_pgsubf.svg"
+          src="/assets/images/marvel-logo.svg"
           alt="marvel en blanc sur fond rouge"
         />
         <div className="signup-logo">
           <img
-            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704382733/marvel/spiderman_logo_i5e7jl.svg"
+            src="/assets/images/spiderman logo.svg"
             alt="arraignée noire sur fond rouge style spiderman"
           />
           <h2>Signup</h2>
           <img
-            src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704382733/marvel/spiderman_logo_i5e7jl.svg"
+            src="/assets/images/spiderman logo.svg"
             alt="arraignée noire sur fond rouge style spiderman"
           />
         </div>

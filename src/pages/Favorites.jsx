@@ -45,11 +45,11 @@ const Favorites = ({ favorites, setFavorites }) => {
         <article className="add-fav">
           <div className="no-fav">
             <img
-              src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704380261/marvel/captain-america-seeklogo.com_j7odqp.svg"
+              src="/assets/images/captain-america-seeklogo.com.svg"
               alt="bouclier en spirale captain america"
             />
             <img
-              src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704382733/marvel/spiderman_logo_i5e7jl.svg"
+              src="/assets/images/spiderman logo.svg"
               alt="arraignée noire sur fond rouge style spiderman"
             />
           </div>
@@ -62,11 +62,11 @@ const Favorites = ({ favorites, setFavorites }) => {
           </div>
           <div className="no-fav">
             <img
-              src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704382733/marvel/spiderman_logo_i5e7jl.svg"
+              src="/assets/images/spiderman logo.svg"
               alt="arraignée noire sur fond rouge style spiderman"
             />
             <img
-              src="https://res.cloudinary.com/dwkwlok28/image/upload/v1704380261/marvel/captain-america-seeklogo.com_j7odqp.svg"
+              src="/assets/images/captain-america-seeklogo.com.svg"
               alt="bouclier en spirale avec une étoile au milieu style captain america"
             />
           </div>
@@ -97,7 +97,7 @@ const Favorites = ({ favorites, setFavorites }) => {
       </section>
       <article className="favorite-logo">
         <img
-          src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703682526/marvel/marvel-logo_pgsubf.svg"
+          src="/assets/images/marvel-logo.svg"
           alt="marvel en blanc sur fond rouge"
         />
       </article>

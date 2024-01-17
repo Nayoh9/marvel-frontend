@@ -782,7 +782,7 @@ form > input {
   position: absolute;
   left: 0%;
   top: 0%;
-  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704464175/marvel/wp9212065-marvel-red-4k-wallpapers_kkudds.jpg);
+  background: url(/assets/images/wp9212065-marvel-red-4k-wallpapers.jpg);
   background-position: center;
   background-size: cover;
   z-index: -1;
@@ -858,7 +858,7 @@ form button {
   position: absolute;
   left: 0%;
   top: 0%;
-  background: url(https://res.cloudinary.com/dwkwlok28/image/upload/v1704464175/marvel/wp9212065-marvel-red-4k-wallpapers_kkudds.jpg);
+  background: url(/assets/images/wp9212065-marvel-red-4k-wallpapers.jpg);
   background-position: center;
   background-size: cover;
   z-index: -1;
