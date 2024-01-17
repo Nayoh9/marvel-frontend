@@ -23,7 +23,7 @@ const Header = ({ setIsConnected, isConnected }) => {
     <header>
       <Link to={"/"}>
         <img
-          src="https://res.cloudinary.com/dwkwlok28/image/upload/v1703682526/marvel/marvel-logo_pgsubf.svg"
+          src="/assets/images/marvel-logo.svg"
           alt="Marvel écrit en blanc sur font rouge"
           className="logo-marvel"
         />
